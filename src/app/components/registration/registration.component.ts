@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, FormControl} from '@angular/forms';
 
-
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
