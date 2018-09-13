@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, FormControl} from '@angular/forms';
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -9,7 +10,9 @@ export class RegistrationComponent implements OnInit {
 
 private _registerForm: FormGroup;
 
-  constructor(private _form: FormBuilder) { }
+  constructor(private _form: FormBuilder) {
+    this.createForm();
+   }
 
   ngOnInit() {
   }
@@ -22,4 +25,7 @@ private _registerForm: FormGroup;
     });
   }
 
+  onSubmit() {
+    console.log(this._registerForm.value);
+  }
 }
