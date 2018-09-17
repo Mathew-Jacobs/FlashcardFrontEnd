@@ -3,9 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { MatToolbarModule } from '@angular/material';
-import {MatButtonModule} from '@angular/material/button';
+import {
+   MatToolbarModule,
+   MatFormFieldModule,
+   MatInputModule,
+   MatButtonModule
+ } from '@angular/material';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
@@ -25,7 +30,10 @@ const routes = [
     FormsModule,
     RouterModule.forRoot(routes),
     MatToolbarModule,
-    MatButtonModule 
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
