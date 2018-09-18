@@ -30,6 +30,6 @@ private _registerForm: FormGroup;
     console.log(this._registerForm.value);
     this._authService
       .register(this._registerForm.value)
-      .subscribe( () => console.log('You did it!'));
+      .subscribe(( () => this. _authService.login(this._registerForm.value)) );
   }
 }
