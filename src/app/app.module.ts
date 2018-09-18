@@ -8,7 +8,8 @@ import {
    MatToolbarModule,
    MatFormFieldModule,
    MatInputModule,
-   MatButtonModule
+   MatButtonModule,
+   MatTableModule
  } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,6 +25,7 @@ import { DeckIndexComponent } from './components/deck/deck-index/deck-index.comp
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'decks', component: DeckIndexComponent },
   { path: '**', component: RegistrationComponent }
 ];
 
@@ -45,6 +47,7 @@ const routes = [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
     ReactiveFormsModule
   ],
   providers: [
