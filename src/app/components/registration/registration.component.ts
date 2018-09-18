@@ -22,7 +22,7 @@ private _registerForm: FormGroup;
     this._registerForm = this._form.group({
       email: new FormControl,
       password: new FormControl,
-      passwordConfirm: new FormControl
+      confirmPassword: new FormControl
     });
   }
 
