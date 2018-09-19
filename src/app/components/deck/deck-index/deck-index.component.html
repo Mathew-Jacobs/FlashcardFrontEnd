@@ -32,8 +32,8 @@
     <ng-container matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef> </mat-header-cell>
       <mat-cell *matCellDef="let deck">
-        <i mat-icon class="material-icons">edit</i>
-        <i class="material-icons">delete</i>
+        <i mat-icon class="material-icons" routerLink="/decks/edit/{{deck.DeckID}}">edit</i>
+        <i class="material-icons" routerLink="/decks/delete/{{deck.DeckID}}">delete</i>
       </mat-cell>
     </ng-container>
     
