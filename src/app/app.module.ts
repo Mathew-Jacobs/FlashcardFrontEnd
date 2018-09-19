@@ -20,13 +20,23 @@ import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { DecksService } from './services/decks.service';
 import { DeckIndexComponent } from './components/deck/deck-index/deck-index.component';
+import { DeckCreateComponent } from './components/deck/deck-create/deck-create.component';
+import { DeckDetailComponent } from './components/deck/deck-detail/deck-detail.component';
+import { DeckEditComponent } from './components/deck/deck-edit/deck-edit.component';
+import { DeckDeleteComponent } from './components/deck/deck-delete/deck-delete.component';
 
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'decks', component: DeckIndexComponent },
-  { path: '**', component: RegistrationComponent }
+  { 
+    path: 'decks', children: [
+      { path: '', component: DeckIndexComponent },
+      { path: 'create', component: DeckCreateComponent },
+      { path: 'detail/:id', component: DeckDetailComponent}
+    ]
+  },
+  
 ];
 
 @NgModule({
@@ -35,7 +45,11 @@ const routes = [
     HeaderComponent,
     RegistrationComponent,
     LoginComponent,
-    DeckIndexComponent
+    DeckIndexComponent,
+    DeckCreateComponent,
+    DeckDetailComponent,
+    DeckEditComponent,
+    DeckDeleteComponent
   ],
   imports: [
     BrowserModule,
