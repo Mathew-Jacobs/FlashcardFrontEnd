@@ -52,8 +52,7 @@ const routes = [
     DeckCreateComponent,
     DeckDetailComponent,
     DeckEditComponent,
-    DeckDeleteComponent,
-    AuthGuard
+    DeckDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +69,8 @@ const routes = [
   ],
   providers: [
     AuthService,
-    DecksService
+    DecksService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
