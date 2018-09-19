@@ -1,9 +1,21 @@
+mat-toolbar {
+    background-color: #FFA357;
+}
+
 .example-fill-remaining-space{
     flex: 1 1 auto;
 }
 
 .nav-btn {
+    height: 64px;
     margin-right: 0.5em;
-    background-color: burlywood;
+    background-color: #FFA357;
+    color: black;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #FF7400;
     color: white;
 }
+
