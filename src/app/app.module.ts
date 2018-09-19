@@ -24,16 +24,19 @@ import { DeckCreateComponent } from './components/deck/deck-create/deck-create.c
 import { DeckDetailComponent } from './components/deck/deck-detail/deck-detail.component';
 import { DeckEditComponent } from './components/deck/deck-edit/deck-edit.component';
 import { DeckDeleteComponent } from './components/deck/deck-delete/deck-delete.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { 
-    path: 'decks', children: [
+    path: 'decks', canActivate: [AuthGuard] , children: [
       { path: '', component: DeckIndexComponent },
       { path: 'create', component: DeckCreateComponent },
-      { path: 'detail/:id', component: DeckDetailComponent}
+      { path: 'detail/:id', component: DeckDetailComponent},
+      { path: 'edit/:id', component: DeckEditComponent},
+      { path: 'delete/:id', component: DeckDeleteComponent}
     ]
   },
   
@@ -49,7 +52,8 @@ const routes = [
     DeckCreateComponent,
     DeckDetailComponent,
     DeckEditComponent,
-    DeckDeleteComponent
+    DeckDeleteComponent,
+    AuthGuard
   ],
   imports: [
     BrowserModule,
