@@ -6,3 +6,11 @@ body, html{
     padding: 0;
     font-family: "Roboto", "Arial", "sans-serif";
 }
+
+.mat-button:hover .mat-button-focus-overlay {
+    opacity: 0 !important;
+}
+
+.mat-button-focus-overlay {
+    background-color: rgba(0,0,0,0);
+}
