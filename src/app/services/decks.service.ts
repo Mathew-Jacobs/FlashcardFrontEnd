@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Deck } from '../models/Deck'
 
-const ApiUrl = 'http://flashfocus.azurewebsites.net/api'
+const ApiUrl = 'http://flashfocus.azurewebsites.net/'
 
 @Injectable()
 export class DecksService {
@@ -10,11 +10,15 @@ export class DecksService {
   constructor(private _http: HttpClient) { }
 
   getDecks() {
-    return this._http.get(`${ApiUrl}/Deck`, { headers: this.getHeaders() });
+    return this._http.get(`${ApiUrl}api/Deck`, { headers: this.getHeaders() });
   }
 
   createDeck(deck: Deck) {
-    return this._http.post(`${ApiUrl}/Deck`, deck, {headers: this.getHeaders()});
+    return this._http.post(`${ApiUrl}api/Deck`, deck, {headers: this.getHeaders()});
+  }
+
+  getDeck(id: string) {
+    return this._http.get(`${ApiUrl}api/Deck/${id}`, { headers: this.getHeaders()});
   }
 
   private getHeaders() {

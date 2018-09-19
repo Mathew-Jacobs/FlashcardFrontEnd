@@ -1,5 +1,5 @@
 <h1>Index</h1>
-<a mat-raised-button color="primary">Create New</a>
+<a mat-raised-button color="primary" routerLink="/decks/create">Create New</a>
 <hr>
 
 <div>
@@ -9,7 +9,9 @@
 
     <ng-container matColumnDef="details">
       <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let deck"><i class="material-icons">library_books</i></mat-cell>
+      <mat-cell *matCellDef="let deck" routerLink="/decks/detail/{{deck.DeckID}}">
+        <i class="material-icons">library_books</i>
+      </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="DeckID">
