@@ -3,7 +3,7 @@ export interface Deck {
     UserID?: number;
     Title: string;
     Description: string;
-    PercentComplete: number;
+    PercentComplete?: number;
     CreateTime?: Date;
     ModifyTime?: Date;
     LastReviewed?: Date;

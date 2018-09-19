@@ -20,11 +20,11 @@
   </div>
   <div>
     <label for="">Modified:</label>
-    <span>{{deck.ModifyTime}}</span>
+    <span>{{deck.ModifyTime | date: 'short'}}</span>
   </div>
   <div>
     <label for="">LastReviewed:</label>
-    <span>{{deck.LastReviewed}}</span>
+    <span>{{deck.LastReviewed | date: 'short'}}</span>
   </div>
   <div>
       <label for="">PercentComplete:</label>

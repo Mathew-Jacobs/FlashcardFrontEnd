@@ -21,6 +21,10 @@ export class DecksService {
     return this._http.get(`${ApiUrl}api/Deck/${id}`, { headers: this.getHeaders()});
   }
 
+  updateDeck(deck: Deck) {
+    return this._http.put(`${ApiUrl}api/Deck`, deck, { headers: this.getHeaders()});
+  }
+
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }
