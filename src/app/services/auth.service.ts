@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs';
 
-const Api_Url = 'http://flashfocus.azurewebsites.net/';
+const Api_Url = 'http://apiflashfocus.azurewebsites.net/';
 
 @Injectable()
 export class AuthService {

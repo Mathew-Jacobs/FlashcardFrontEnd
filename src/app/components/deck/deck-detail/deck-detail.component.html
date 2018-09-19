@@ -4,7 +4,7 @@
 <div *ngIf="deck">
   <div>
     <label for="">DeckID:</label>
-    <span>{{deck.DeckId}}</span>
+    <span>{{deck.DeckID}}</span>
   </div>
   <div>
     <label for="">Title:</label>
@@ -16,16 +16,20 @@
   </div>
   <div>
     <label for="">Created:</label>
-    <span>{{deck.Created}}</span>
+    <span>{{deck.CreateTime | date: 'short'}}</span>
   </div>
   <div>
     <label for="">Modified:</label>
-    <span>{{deck.Modified}}</span>
+    <span>{{deck.ModifyTime}}</span>
   </div>
   <div>
     <label for="">LastReviewed:</label>
     <span>{{deck.LastReviewed}}</span>
   </div>
+  <div>
+      <label for="">PercentComplete:</label>
+      <span>{{deck.PercentComplete}}</span>
+    </div>
 </div>
 
 <button mat-button color="accent">Edit</button>|

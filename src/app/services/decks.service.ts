@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Deck } from '../models/Deck'
 
-const ApiUrl = 'http://flashfocus.azurewebsites.net/'
+const ApiUrl = 'http://apiflashfocus.azurewebsites.net/'
 
 @Injectable()
 export class DecksService {
