@@ -1,41 +1,11 @@
-<h1>Index</h1>
-<a mat-raised-button color="primary" routerLink="/decks/create">Create New</a>
-<hr>
 
-<div>
-  <mat-table #table [dataSource]="dataSource">
-    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row> 
-
-    <ng-container matColumnDef="details">
-      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let deck" routerLink="/decks/detail/{{deck.DeckID}}">
-        <i class="material-icons">library_books</i>
-      </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="DeckID">
-      <mat-header-cell *matHeaderCellDef> Deck # </mat-header-cell>
-      <mat-cell *matCellDef="let deck"> {{deck.DeckID}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="Title">
-      <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
-      <mat-cell *matCellDef="let deck"> {{deck.Title}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="PercentComplete">
-      <mat-header-cell *matHeaderCellDef> PercentComplete </mat-header-cell>
-      <mat-cell *matCellDef="let deck"> {{deck.PercentComplete}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="buttons">
-      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
-      <mat-cell *matCellDef="let deck">
-        <i mat-icon class="material-icons" routerLink="/decks/edit/{{deck.DeckID}}">edit</i>
-        <i class="material-icons" routerLink="/decks/delete/{{deck.DeckID}}">delete</i>
-      </mat-cell>
-    </ng-container>
-    
-  </mat-table>
-</div>
+<mat-grid-list cols="3" gutterSize="2em">
+  <mat-grid-tile class="deckTile">
+    <mat-card class="deckCard">
+      <a mat-raised-button color="primary" routerLink="/decks/create">Create New</a>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile *ngFor="let deck of dataSource" class="deckTile">
+    <mat-card class="deckCard">{{deck.Title}}</mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

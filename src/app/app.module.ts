@@ -9,7 +9,9 @@ import {
    MatFormFieldModule,
    MatInputModule,
    MatButtonModule,
-   MatTableModule
+   MatTableModule,
+   MatGridListModule,
+   MatCardModule
  } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -66,7 +68,9 @@ const routes = [
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [
     AuthService,
