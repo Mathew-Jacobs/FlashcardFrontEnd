@@ -1,11 +1,20 @@
 
-<mat-grid-list cols="3" gutterSize="2em">
+<mat-grid-list cols="3" gutterSize="2em" rowHeight="4:3">
   <mat-grid-tile class="deckTile">
     <mat-card class="deckCard">
       <a mat-raised-button color="primary" routerLink="/decks/create">Create New</a>
     </mat-card>
   </mat-grid-tile>
   <mat-grid-tile *ngFor="let deck of dataSource" class="deckTile">
-    <mat-card class="deckCard">{{deck.Title}}</mat-card>
+    <mat-card class="deckCard">
+      <div class="deckHeader">
+        {{deck.Title}}
+      </div>
+      <div class="contentBox">
+        <div class="graphPercent">
+          {{deck.PercentComplete}}
+        </div>
+      </div>
+    </mat-card>
   </mat-grid-tile>
 </mat-grid-list>

@@ -1,13 +1,43 @@
 .deckTile {
-    background-color: #FFC89A;
+    background-color: black;
     overflow: visible;
 }
 
 .deckCard {
-    background-color: #FFF8F3;
+    background-color: #FFC89A;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+}
+
+.deckHeader {
+    background-color: #FFC89A;
+    position: absolute;
+    text-align: left;
+    font-size: 2em;
+    padding: 5px 10px;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 80%;
+}
+
+.contentBox {
+    background-color: #FFF8F3;
+    position: absolute;
+    right: 1px;
+    left: 1px;
+    top: 20%;
+    bottom: 10%;
+}
+
+.graphPercent {
+    background-color: black;
+    border-radius: 50%;
+    margin: 20px 20px;
+    width: 120px;
+    height: 120px;
+    color: white;
 }
