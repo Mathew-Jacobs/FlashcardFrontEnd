@@ -1,4 +1,3 @@
-
 <mat-grid-list cols="3" gutterSize="2em" rowHeight="4:3">
   <mat-grid-tile class="deckTile">
     <mat-card class="deckCard">
@@ -9,6 +8,19 @@
     <mat-card class="deckCard">
       <div class="deckHeader">
         {{deck.Title}}
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="menuButton">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/decks/edit/{{deck.DeckID}}">
+            <mat-icon>edit</mat-icon>
+            <span>Edit</span>
+          </button>
+          <button mat-menu-item routerLink="/decks/delete/{{deck.DeckID}}">
+            <mat-icon>delete</mat-icon>
+            <span>Delete</span>
+          </button>
+        </mat-menu>
       </div>
       <div class="contentBox">
         <div class="graphPercent">

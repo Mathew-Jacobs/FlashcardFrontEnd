@@ -41,3 +41,7 @@
     height: 120px;
     color: white;
 }
+
+.menuButton {
+    float: right;
+}
