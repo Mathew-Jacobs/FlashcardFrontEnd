@@ -28,6 +28,8 @@ import { DeckEditComponent } from './components/deck/deck-edit/deck-edit.compone
 import { DeckDeleteComponent } from './components/deck/deck-delete/deck-delete.component';
 import { AuthGuard } from './guards/auth.guard';
 import { GlobalApp } from './helpers/isLogged';
+import { CardsService } from './services/cards.service';
+import { CardIndexComponent } from './components/card/card-index/card-index.component';
 
 
 const routes = [
@@ -55,7 +57,8 @@ const routes = [
     DeckCreateComponent,
     DeckDetailComponent,
     DeckEditComponent,
-    DeckDeleteComponent
+    DeckDeleteComponent,
+    CardIndexComponent
   ],
   imports: [
     BrowserModule,
@@ -75,6 +78,7 @@ const routes = [
   providers: [
     AuthService,
     DecksService,
+    CardsService,
     AuthGuard,
     GlobalApp
   ],
