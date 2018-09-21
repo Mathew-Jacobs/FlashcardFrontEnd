@@ -9,7 +9,9 @@ import {
    MatFormFieldModule,
    MatInputModule,
    MatButtonModule,
-   MatTableModule
+   MatTableModule,
+   MatGridListModule,
+   MatCardModule
  } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,6 +27,7 @@ import { DeckDetailComponent } from './components/deck/deck-detail/deck-detail.c
 import { DeckEditComponent } from './components/deck/deck-edit/deck-edit.component';
 import { DeckDeleteComponent } from './components/deck/deck-delete/deck-delete.component';
 import { AuthGuard } from './guards/auth.guard';
+import { GlobalApp } from './helpers/isLogged';
 
 
 const routes = [
@@ -65,12 +68,15 @@ const routes = [
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [
     AuthService,
     DecksService,
-    AuthGuard
+    AuthGuard,
+    GlobalApp
   ],
   bootstrap: [AppComponent]
 })
