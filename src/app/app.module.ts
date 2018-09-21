@@ -12,7 +12,9 @@ import {
    MatTableModule,
    MatGridListModule,
    MatCardModule,
-   MatTabsModule
+   MatTabsModule,
+   MatMenuModule,
+   MatIconModule
  } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -69,7 +71,9 @@ const routes = [
     ReactiveFormsModule,
     MatGridListModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [
     AuthService,
