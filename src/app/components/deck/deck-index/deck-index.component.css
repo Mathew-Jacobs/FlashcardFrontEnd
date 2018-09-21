@@ -17,7 +17,6 @@
     position: absolute;
     text-align: left;
     font-size: 2em;
-    padding: 5px 10px;
     top: 0;
     right: 0;
     left: 0;
@@ -43,5 +42,20 @@
 }
 
 .menuButton {
-    float: right;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid #FF7400;
+    color: #FF7400;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2%;
+}
+
+.deckTitle {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
 }
