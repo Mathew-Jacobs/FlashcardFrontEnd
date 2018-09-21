@@ -1,0 +1,76 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$md-flashprimary: (
+    50 : #fff4eb,
+    100 : #ffe3cd,
+    200 : #ffd1ac,
+    300 : #ffbf8a,
+    400 : #ffb171,
+    500 : #ffa358,
+    600 : #ff9b50,
+    700 : #ff9147,
+    800 : #ff883d,
+    900 : #ff772d,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffe5d9,
+    A700 : #ffd4bf,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-flashaccent: (
+    50 : #ebf8eb,
+    100 : #ceedce,
+    200 : #aee2ae,
+    300 : #8dd68d,
+    400 : #74cd74,
+    500 : #5cc45c,
+    600 : #54be54,
+    700 : #4ab64a,
+    800 : #41af41,
+    900 : #30a230,
+    A100 : #e8ffe8,
+    A200 : #b5ffb5,
+    A400 : #82ff82,
+    A700 : #69ff69,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$bv-palette-primary: mat-palette($md-flashprimary);
+$bv-palette-accent: mat-palette($md-flashaccent);
+
+$bv-theme: mat-light-theme($bv-palette-primary,$bv-palette-accent);
+
+@include angular-material-theme($bv-theme);
