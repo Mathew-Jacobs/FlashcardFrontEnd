@@ -1,37 +1,42 @@
-<h1>Delete</h1>
-<h4>Are you sure you want to delete this?</h4>
+<div mat-dialog-title>
+  <h1>Delete</h1>
+  <h4>Are you sure you want to delete this?</h4>
+</div>
 
 <hr>
-<div *ngIf="deck">
-  <div>
-    <label for="">DeckID:</label>
-    <span>{{deck.DeckID}}</span>
-  </div>
-  <div>
-    <label for="">Title:</label>
-    <span>{{deck.Title}}</span>
-  </div>
-  <div>
-    <label for="">Description:</label>
-    <span>{{deck.Description}}</span>
-  </div>
-  <div>
-    <label for="">Created:</label>
-    <span>{{deck.CreateTime | date: 'short'}}</span>
-  </div>
-  <div>
-    <label for="">Modified:</label>
-    <span>{{deck.ModifyTime | date: 'short'}}</span>
-  </div>
-  <div>
-    <label for="">LastReviewed:</label>
-    <span>{{deck.LastReviewed | date: 'short'}}</span>
-  </div>
-  <div>
+<mat-dialog-content>
+  <div *ngIf="deck">
+    <div>
+      <label for="">DeckID:</label>
+      <span>{{deck.DeckID}}</span>
+    </div>
+    <div>
+      <label for="">Title:</label>
+      <span>{{deck.Title}}</span>
+    </div>
+    <div>
+      <label for="">Description:</label>
+      <span>{{deck.Description}}</span>
+    </div>
+    <div>
+      <label for="">Created:</label>
+      <span>{{deck.CreateTime | date: 'short'}}</span>
+    </div>
+    <div>
+      <label for="">Modified:</label>
+      <span>{{deck.ModifyTime | date: 'short'}}</span>
+    </div>
+    <div>
+      <label for="">LastReviewed:</label>
+      <span>{{deck.LastReviewed | date: 'short'}}</span>
+    </div>
+    <div>
       <label for="">PercentComplete:</label>
       <span>{{deck.PercentComplete}}</span>
     </div>
-</div>
-
-<button mat-button color="warn" (click)="onDelete()">Delete</button>|
-<button mat-button color="primary" routerLink="/decks">Back to List</button>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="1" color="warn" (click)="onDelete()">Delete</button>|
+  <button mat-button mat-dialog-close color="primary">Back to List</button>
+</mat-dialog-actions>
