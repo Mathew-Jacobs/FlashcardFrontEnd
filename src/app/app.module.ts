@@ -14,7 +14,8 @@ import {
    MatCardModule,
    MatTabsModule,
    MatMenuModule,
-   MatIconModule
+   MatIconModule,
+   MatDialogModule
  } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -73,7 +74,8 @@ const routes = [
     MatCardModule,
     MatTabsModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [
     AuthService,
