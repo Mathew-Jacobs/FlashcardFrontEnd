@@ -57,7 +57,14 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    transition: ease-in-out 0.15s;
     right: 2%;
+}
+
+.menuButton:hover {
+    background-color: #FF7400;
+
+    color: white;
 }
 
 .deckTitle {
