@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 import {
    MatToolbarModule,
@@ -75,7 +76,21 @@ const routes = [
     MatTabsModule,
     MatMenuModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    NgCircleProgressModule.forRoot({
+      "backgroundPadding": 7,
+      "radius": 60,
+      "space": -6,
+      "outerStrokeWidth": 10,
+      "outerStrokeColor": "#5cc45c",
+      "innerStrokeColor": "#111213",
+      "innerStrokeWidth": 2,
+      "subtitleFontSize": "20",
+      "animationDuration": 1000,
+      "showSubtitle": false,
+      "renderOnClick": false,
+      "responsive": true
+    })
   ],
   providers: [
     AuthService,
