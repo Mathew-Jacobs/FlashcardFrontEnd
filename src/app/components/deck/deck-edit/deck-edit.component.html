@@ -1,5 +1,6 @@
-<h1>Edit a Deck</h1>
-<hr>
+<div class="form">
+<h1 class="title">Edit a Deck</h1>
+<div class="fill-out">
 
 <div *ngIf="deck">
   <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editDeckForm">
@@ -10,18 +11,22 @@
         </mat-form-field>
       </div>
       <div>
-        <mat-form-field>
+        <mat-form-field class="line">
           <input matInput placeholder="Title" formControlName="Title" type="Title" required [value]="deck.Title" />
         </mat-form-field>
       </div>
       <div>
-        <mat-form-field>
+        <mat-form-field class="line">
           <input matInput placeholder="Description" formControlName="Description" type="Description" required [value]="deck.Description" />
         </mat-form-field>
       </div>
     </div>
+    <div class="button">
     <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+      </div>
   </form>
 </div>
 
-<a mat-button routerLink="/decks">Back to List</a>
+<a class="back" mat-button routerLink="/decks">Back to List</a>
+</div>
+</div>
