@@ -18,7 +18,7 @@
             <mat-icon>edit</mat-icon>
             <span>Edit</span>
           </button>
-          <button mat-menu-item routerLink="/decks/delete/{{deck.DeckID}}">
+          <button mat-menu-item (click)="openDialog(deck.DeckID)">
             <mat-icon>delete</mat-icon>
             <span>Delete</span>
           </button>
