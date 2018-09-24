@@ -25,8 +25,9 @@
         </mat-menu>
       </div>
       <div class="contentBox">
-        <div class="graphPercent">
-          {{deck.PercentComplete}}
+        <div class="graphWrapper">
+          <circle-progress [percent]=60>
+          </circle-progress>
         </div>
       </div>
     </mat-card>
