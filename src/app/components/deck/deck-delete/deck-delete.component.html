@@ -37,6 +37,6 @@
   </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button color="warn" (click)="onDelete()">Delete</button>|
+  <button mat-button [mat-dialog-close]="1" color="warn" (click)="onDelete()">Delete</button>|
   <button mat-button mat-dialog-close color="primary">Back to List</button>
 </mat-dialog-actions>

@@ -32,7 +32,10 @@ export class DeckIndexComponent implements OnInit {
     console.log(id);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      if (result == 1)
+      {
+        this.dataSource = this.dataSource.filter(h => h.DeckID !== id)
+      }
     });
   }
 }
