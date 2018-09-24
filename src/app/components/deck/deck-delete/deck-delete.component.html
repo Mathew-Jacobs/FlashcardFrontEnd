@@ -1,4 +1,4 @@
-<div mat-dialog-title>
+<div mat-dialog-title *ngIf="deck">
   <h4>Are you sure you want to delete {{deck.Title}}?</h4>
 </div>
 
@@ -36,6 +36,6 @@
   </div> -->
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close color="primary">Back to List</button>
+  <button mat-button mat-dialog-close color="primary">Cancel</button>
   <button mat-button [mat-dialog-close]="1" color="warn" (click)="onDelete()">Delete</button>
 </mat-dialog-actions>

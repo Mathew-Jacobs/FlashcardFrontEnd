@@ -29,8 +29,6 @@ export class DeckIndexComponent implements OnInit {
       }
     });
 
-    console.log(id);
-
     dialogRef.afterClosed().subscribe(result => {
       if (result == 1)
       {
