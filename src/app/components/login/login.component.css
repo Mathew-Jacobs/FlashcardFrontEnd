@@ -1,0 +1,35 @@
+.log-reg-label {
+    background-color: #FFC89A;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    margin-top: 2em;
+}
+
+.login {
+    width: 50%;
+    margin: 0 auto 20px;
+    background-color: #FFF8F3;
+    padding-bottom: 2em;
+    border-bottom: 1em solid #FFC89A;
+    border-right: 1px solid #FFC89A;
+    border-left: 1px solid #FFC89A;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.email {
+    padding-top: 1em;
+}
+
+.password {
+    padding-bottom: 1em;
+}
+
+.nav-btn {
+    color: black;
+    background-color: white;
+}
+
+.nav-btn:hover{
+    color: white;
+    background-color: #FFA357;
+}

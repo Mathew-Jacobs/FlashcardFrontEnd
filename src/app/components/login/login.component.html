@@ -1,18 +1,21 @@
-<mat-tab-group [color]="primary">
+<mat-tab-group>
   <mat-tab label="login">
-    <h1>Login.</h1>
-    <h4>Use a local account to login</h4>
-    <hr>
+    
+    <div class="login">
+    <div class="log-reg-label">
+      <h1>Welcome to Flash Focus!</h1>
+      <h4>Please login to continue.</h4>
+    </div>
 
 
     <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="loginForm">
       <div>
-        <div>
+        <div class="email">
           <mat-form-field>
             <input matInput placeholder="Email" formControlName="email" type="email" required/>
           </mat-form-field>
         </div>
-        <div>
+        <div class="password">
           <mat-form-field>
             <input matInput placeholder="Password" formControlName="password" type="password" required/>
           </mat-form-field>
@@ -20,16 +23,18 @@
       </div>
       <button mat-raised-button class="nav-btn" color="primary" type="submit">Login</button>
     </form>
+  </div>
     <br>
   </mat-tab>
   <mat-tab label="register">
+    <div class="login">
+    <div class="log-reg-label">
       <h1>Register</h1>
-      <h4>Create a new account.</h4>
-      <hr>
+      <h4>Create a new account.</h4></div>
       
       <form (ngSubmit)="onSubmitReg()" [formGroup]="registerForm">
         <div>
-          <div>
+          <div class="email">
             <mat-form-field>
               <input matInput placeholder="Email" formControlName="email" type="email" required/>
             </mat-form-field>
@@ -39,7 +44,7 @@
               <input matInput placeholder="Password" formControlName="password" type="password" required/>
             </mat-form-field>
           </div>
-          <div>
+          <div class="password">
             <mat-form-field>
               <input matInput placeholder="Confirm Password" formControlName="confirmPassword" type="password" required/>
             </mat-form-field>
@@ -47,5 +52,6 @@
         </div>
         <button mat-raised-button class="nav-btn" color="primary" type="submit">Register</button>
       </form>
+    </div> 
   </mat-tab>
 </mat-tab-group>
