@@ -4,27 +4,28 @@
 
 <div>
   <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
-    <ng-container matColumnDef="DeckID">
-      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let card">
-        {{card.DeckID}}
-      </mat-cell>
+    <ng-container matColumnDef="CardID">
+        <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+        <mat-cell *matCellDef="let card" routerLink="/note/deatil/{{card.CardID}}">{{card.CardID}}<i class="material-icons">library_books</i></mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="NumberTimesReviewed">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let card"> {{card.NumberTimesReviewed}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="Term">
-      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
       <mat-cell *matCellDef="let card">{{card.Term}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="Definition">
-      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let card">{{card.Definition}}</mat-cell>
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let card">{{card.Definition}}</mat-cell>
     </ng-container>
-    
-    <ng-container matColumnDef="CardID">
-      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let card" routerLink="/note/deatil/{{card.CardID}}">{{card.CardID}}<i class="material-icons">library_books</i></mat-cell>
-    </ng-container>
+
   </mat-table>
 </div>
