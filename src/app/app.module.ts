@@ -54,7 +54,7 @@ const routes = [
   {
     path: 'cards', canActivate: [AuthGuard], children: [
       { path: '', component: CardIndexComponent },
-      { path: 'create', component: CardCreateComponent },
+      { path: 'create/:id', component: CardCreateComponent },
       { path: 'detail/:id', component: CardDetailComponent },
       { path: 'edit/:id', component: CardEditComponent },
       { path: 'delete/:id', component: CardDeleteComponent }
