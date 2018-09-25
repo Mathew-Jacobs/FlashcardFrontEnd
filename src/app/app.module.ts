@@ -3,17 +3,21 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 import {
-  MatToolbarModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatButtonModule,
-  MatTableModule,
-  MatGridListModule,
-  MatCardModule,
-  MatTabsModule
-} from '@angular/material';
+   MatToolbarModule,
+   MatFormFieldModule,
+   MatInputModule,
+   MatButtonModule,
+   MatTableModule,
+   MatGridListModule,
+   MatCardModule,
+   MatTabsModule,
+   MatMenuModule,
+   MatIconModule,
+   MatDialogModule
+ } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -89,7 +93,24 @@ const routes = [
     ReactiveFormsModule,
     MatGridListModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    MatMenuModule,
+    MatIconModule,
+    MatDialogModule,
+    NgCircleProgressModule.forRoot({
+      "backgroundPadding": 7,
+      "radius": 60,
+      "space": -6,
+      "outerStrokeWidth": 10,
+      "outerStrokeColor": "#5cc45c",
+      "innerStrokeColor": "#111213",
+      "innerStrokeWidth": 2,
+      "subtitleFontSize": "20",
+      "animationDuration": 1000,
+      "showSubtitle": false,
+      "renderOnClick": false,
+      "responsive": true
+    })
   ],
   providers: [
     AuthService,

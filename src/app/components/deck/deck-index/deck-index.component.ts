@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DecksService } from '../../../services/decks.service';
 import { Deck } from '../../../models/Deck';
-import { MatGridList } from '../../../../../node_modules/@angular/material';
+import { MatGridList, MatDialog } from '../../../../../node_modules/@angular/material';
+import { DeckDeleteComponent } from '../deck-delete/deck-delete.component';
 
 @Component({
   selector: 'app-deck-index',
@@ -13,7 +14,7 @@ export class DeckIndexComponent implements OnInit {
   columnNames = ['details', 'DeckID', 'Title', 'PercentComplete', 'buttons'];
   dataSource: Deck[];
 
-  constructor(private _deckService: DecksService) { }
+  constructor(private _deckService: DecksService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this._deckService.getDecks().subscribe((decks: Deck[]) => {
@@ -21,4 +22,20 @@ export class DeckIndexComponent implements OnInit {
     });
   }
 
+  openDialog( id ) {
+    const dialogRef = this.dialog.open(DeckDeleteComponent, {
+      data: {
+        id
+      }
+    });
+
+    console.log(id);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result == 1)
+      {
+        this.dataSource = this.dataSource.filter(h => h.DeckID !== id)
+      }
+    });
+  }
 }
