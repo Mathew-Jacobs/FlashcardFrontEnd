@@ -17,6 +17,7 @@ export class CardIndexComponent implements OnInit {
   ngOnInit() {
     this._cardService.getCards().subscribe((cards: Card[]) =>{
       this.dataSource =  new MatTableDataSource <Card>(cards);
+      console.log(cards)
     });
   }
 
