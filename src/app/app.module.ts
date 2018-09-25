@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NgCircleProgressModule } from 'ng-circle-progress';
@@ -32,21 +32,36 @@ import { DeckEditComponent } from './components/deck/deck-edit/deck-edit.compone
 import { DeckDeleteComponent } from './components/deck/deck-delete/deck-delete.component';
 import { AuthGuard } from './guards/auth.guard';
 import { GlobalApp } from './helpers/isLogged';
+import { CardsService } from './services/cards.service';
+import { CardIndexComponent } from './components/card/card-index/card-index.component';
+import { CardCreateComponent } from './components/card/card-create/card-create.component';
+import { CardDetailComponent } from './components/card/card-detail/card-detail.component';
+import { CardEditComponent } from './components/card/card-edit/card-edit.component';
+import { CardDeleteComponent } from './components/card/card-delete/card-delete.component';
 
 
 const routes = [
   { path: 'login', component: LoginComponent },
-  { 
-    path: 'decks', canActivate: [AuthGuard] , children: [
+  {
+    path: 'decks', canActivate: [AuthGuard], children: [
       { path: '', component: DeckIndexComponent },
       { path: 'create', component: DeckCreateComponent },
-      { path: 'detail/:id', component: DeckDetailComponent},
-      { path: 'edit/:id', component: DeckEditComponent},
-      { path: 'delete/:id', component: DeckDeleteComponent}
+      { path: 'detail/:id', component: DeckDetailComponent },
+      { path: 'edit/:id', component: DeckEditComponent },
+      { path: 'delete/:id', component: DeckDeleteComponent }
     ]
   },
-  
-];
+  {
+    path: 'cards', canActivate: [AuthGuard], children: [
+      { path: '', component: CardIndexComponent },
+      { path: 'create', component: CardCreateComponent },
+      { path: 'detail/:id', component: CardDetailComponent },
+      { path: 'edit/:id', component: CardEditComponent },
+      { path: 'delete/:id', component: CardDeleteComponent }
+    ]
+  },
+]
+  ;
 
 @NgModule({
   declarations: [
@@ -57,7 +72,12 @@ const routes = [
     DeckCreateComponent,
     DeckDetailComponent,
     DeckEditComponent,
-    DeckDeleteComponent
+    DeckDeleteComponent,
+    CardIndexComponent,
+    CardCreateComponent,
+    CardDetailComponent,
+    CardEditComponent,
+    CardDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -95,6 +115,7 @@ const routes = [
   providers: [
     AuthService,
     DecksService,
+    CardsService,
     AuthGuard,
     GlobalApp
   ],
