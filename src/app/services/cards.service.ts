@@ -28,7 +28,7 @@ export class CardsService {
   }
 
   updateCard(card: Card) {
-    return this._http.put(`${ApiUrl}api/Flashcard/`, card,{headers: this.getHeaders()})
+    return this._http.put(`${ApiUrl}api/Flashcard`, card,{headers: this.getHeaders()})
   }
 
   deleteCard(id: number){

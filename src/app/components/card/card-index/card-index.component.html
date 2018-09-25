@@ -9,7 +9,7 @@
 
     <ng-container matColumnDef="CardID">
         <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-        <mat-cell *matCellDef="let card" routerLink="/note/deatil/{{card.CardID}}">{{card.CardID}}<i class="material-icons">library_books</i></mat-cell>
+        <mat-cell *matCellDef="let card" routerLink="/cards/detail/{{card.CardID}}/{{card.DeckIndex}}">{{card.CardID}}<i class="material-icons">library_books</i></mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="NumberTimesReviewed">
