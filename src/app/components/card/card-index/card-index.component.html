@@ -1,3 +1,30 @@
-<p>
-  card-index works!
-</p>
+<h1>Index</h1>
+<a mat-raised-button color="primary" routerLink="/cards/create">Create New</a>
+<hr>
+
+<div>
+  <mat-table #table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="DeckID">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let card">
+        {{card.DeckID}}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Term">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let card">{{card.Term}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Definition">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let card">{{card.Definition}}</mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="CardID">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let card" routerLink="/note/deatil/{{card.CardID}}">{{card.CardID}}<i class="material-icons">library_books</i></mat-cell>
+    </ng-container>
+  </mat-table>
+</div>
