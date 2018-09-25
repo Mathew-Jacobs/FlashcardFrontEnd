@@ -2,7 +2,7 @@ export interface Card {
     CardID?: number;
     Term: string;
     Definition: string;
-    DeckIndex?: number;
+    DeckID?: number;
 
     CreateTime?: Date;
     ModifyTime?: Date;

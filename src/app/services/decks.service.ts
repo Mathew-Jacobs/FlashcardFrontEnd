@@ -18,7 +18,6 @@ export class DecksService {
   }
 
   getDeck(id: string) {
-    console.log(id)
     return this._http.get(`${ApiUrl}api/Deck/${id}`, { headers: this.getHeaders()});
   }
 
