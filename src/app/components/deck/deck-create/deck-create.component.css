@@ -1,0 +1,39 @@
+.nav-btn {
+    color: black;
+    background-color: white;
+}
+.nav-btn:hover {
+    color: white;
+    background-color: #FFA357;
+}
+.button {
+    padding-top: 1em;
+}
+.back {
+    padding-top: 1em;
+}
+.back:hover {
+    color: #FFA357;
+}
+.line {
+    padding-top: .5em;
+}
+.create {
+    background-color: #FFC89A;
+    width: 50%;
+    margin: auto;
+}
+.fill-out {
+    padding-top: 1.5em;
+    background-color: #fff8f3;
+    border-color: #FFC89A;
+    border-bottom: 1em solid #FFC89A;
+    border-right: 1px solid #FFC89A;
+    border-left: 1px solid #FFC89A;
+}
+.title {
+    padding-top: 15px;
+    color: black;
+    font: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+}
