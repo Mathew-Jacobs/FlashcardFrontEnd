@@ -1,0 +1,20 @@
+<h1>Create a Card.</h1>
+<hr>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="cardForm">
+  <div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Term" formControlName="Term" type="Term" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Definition" formControlName="Definition" type="Definition" required/>
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Card</button>
+</form>
+
+<a mat-button routerLink="/card">Back to List</a>
