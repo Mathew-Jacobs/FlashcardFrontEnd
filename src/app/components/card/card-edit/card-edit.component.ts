@@ -32,6 +32,8 @@ export class CardEditComponent implements OnInit {
 
   createForm(){
     this.editCardForm = this._form.group({
+      CardID: new FormControl(this.card.CardID),
+      DeckID: new FormControl(this.card.DeckID),   
       Term: new FormControl(this.card.Term),
       Definition: new FormControl(this.card.Definition)
     });
