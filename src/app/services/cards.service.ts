@@ -11,8 +11,8 @@ export class CardsService {
 
   constructor(private _http: HttpClient) { }
 
-  getCards() {
-    return this._http.get(`${ApiUrl}api/Flashcard`, { headers: this.getHeaders() });
+  getCards(did: string) {
+    return this._http.get(`${ApiUrl}api/Flashcard?did=${did}`, { headers: this.getHeaders() });
   }
 
   private getHeaders() {
@@ -23,8 +23,8 @@ export class CardsService {
     return this._http.post(`${ApiUrl}api/Flashcard`, card, { headers: this.getHeaders() });
   }
 
-  getCard(id: string) {
-    return this._http.get(`${ApiUrl}api/Flashcard/${id}`, { headers: this.getHeaders() });
+  getCard(id: string, did: string) {
+    return this._http.get(`${ApiUrl}api/Flashcard/${id}?did=${did}`, { headers: this.getHeaders() });
   }
 
   updateCard(card: Card) {

@@ -15,7 +15,7 @@ export class CardDetailComponent implements OnInit {
 
   ngOnInit() {
     this._activatedRoute.paramMap.subscribe(routeData => {
-      this._cardService.getCard(routeData.get('id')).subscribe((singleCard: Card) => {this.card = singleCard;})
+      this._cardService.getCard(routeData.get('id'), routeData.get('did')).subscribe((singleCard: Card) => {this.card = singleCard;})
       console.log(routeData);
     })
   }

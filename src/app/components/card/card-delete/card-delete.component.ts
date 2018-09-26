@@ -14,7 +14,7 @@ export class CardDeleteComponent implements OnInit {
   
   constructor(private _cardService: CardsService, private _ar: ActivatedRoute,private _router: Router){
   this._ar.paramMap.subscribe(p => {
-    this._cardService.getCard(p.get('id')).subscribe((singleCard: Card) => {
+    this._cardService.getCard(p.get('id'), p.get('did')).subscribe((singleCard: Card) => {
       this.card = singleCard;
     });
   });

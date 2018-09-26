@@ -21,7 +21,7 @@ export class CardEditComponent implements OnInit {
               private _router: Router) {
 
                 this._ar.paramMap.subscribe(p => {
-                  this._cardService.getCard(p.get('id')).subscribe((singleCard: Card)=>{
+                  this._cardService.getCard(p.get('id'), p.get('did')).subscribe((singleCard: Card)=>{
                     this.card = singleCard;
                     this.createForm();
                   })
