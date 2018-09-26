@@ -35,7 +35,9 @@ export class CardCreateComponent implements OnInit {
     });
   }
 
+
+
   onSubmit() {
-    this._cardService.createCard(this.cardForm.value).subscribe(data => { this._router.navigate(['/cards'])})
+    this._cardService.createCard(this.cardForm.value).subscribe(data => { this._router.navigate([`/decks/detail/${this.deck.DeckID}`])})
   }
 }

@@ -15,10 +15,10 @@ export class CardIndexComponent implements OnInit {
   constructor(private _cardService: CardsService) { }
 
   ngOnInit() {
-    this._cardService.getCards().subscribe((cards: Card[]) =>{
-      this.dataSource =  new MatTableDataSource <Card>(cards);
-      console.log(cards)
-    });
+    // this._cardService.getCards().subscribe((cards: Card[]) =>{
+    //   this.dataSource =  new MatTableDataSource <Card>(cards);
+    //   console.log(cards)
+    // });
   }
 
 }
