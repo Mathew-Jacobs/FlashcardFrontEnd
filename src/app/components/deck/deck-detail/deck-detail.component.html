@@ -1,6 +1,18 @@
 <h1>Details</h1>
 
 <hr>
+
+<div *ngIf="cardList">
+  <ul *ngFor="let card of cardList">
+    <li>
+      <div>
+        {{card.Term}}
+      </div>
+      <button mat-button routerLink="/cards/detail/{{card.CardID}}/{{deck.DeckID}}">Details</button>
+    </li>
+  </ul>
+</div>
+
 <div *ngIf="deck">
   <div>
     <label for="">DeckID:</label>
