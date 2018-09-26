@@ -4,7 +4,6 @@
   <div class="fill-out">
     <div *ngIf="card">
       <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editCardForm">
-        
           <div hidden>
             <mat-form-field>
               <input matInput placeholder="CardID" formControlName="CardID" type="CardID" required [value]="card.CardID" />
