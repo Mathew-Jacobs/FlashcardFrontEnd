@@ -1,0 +1,45 @@
+.headerTile {
+    background-color: #FFC89A;
+    border: 2px solid #FFC89A;
+}
+
+.cardListTile {
+    overflow-y: auto;
+    border: 2px solid #FFC89A;
+    border-bottom: 10px solid #FFC89A; 
+}
+
+.graphDetailWrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5%;
+    right: 37%;
+}
+
+.cardListContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.deckDetailWrapper {
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 63%;
+    right: 5%;
+    transform: translateY(-50%); 
+}
+
+.deckContentTile {
+    background-color: #FFF8F3;
+    border: 2px solid #FFC89A;
+    border-bottom: 10px solid #FFC89A; 
+}
+
+.cardListNav {
+    background-color: #FFC89A;
+    border: 2px solid #FFC89A;
+}
