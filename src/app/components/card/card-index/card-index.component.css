@@ -7,7 +7,14 @@
 
 .cardReviewWrapper {
     width: 80%;
-    margin: 8% auto;
+    margin: 8% auto 0;
+}
+
+.answerBox {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .termWrapper {
@@ -16,4 +23,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2em;
+}
+
+.termArea {
+    height: 100%;
+    padding: 0;
 }
