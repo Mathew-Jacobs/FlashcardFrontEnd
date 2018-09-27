@@ -17,6 +17,3 @@
     transform: translate(-50%, -50%);
     font-size: 2em;
 }
-
-::ng-deep .tabs .mat-tab-list .mat-tab-labels .mat-ink-bar
-{ display: none; }
