@@ -16,7 +16,8 @@ import {
    MatTabsModule,
    MatMenuModule,
    MatIconModule,
-   MatDialogModule
+   MatDialogModule,
+   MatButtonToggleModule
  } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -110,7 +111,8 @@ const routes = [
       "showSubtitle": false,
       "renderOnClick": false,
       "responsive": true
-    })
+    }),
+    MatButtonToggleModule
   ],
   providers: [
     AuthService,

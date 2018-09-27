@@ -15,11 +15,27 @@
       </div>
     </mat-grid-tile>
     <mat-grid-tile class="deckTile" [colspan]="7">
-      <mat-card class="termCard">
-        <div class="termWrapper">
-          {{dataSource[cardNum].Term}}
-        </div>
-      </mat-card>
+      <mat-tab-group class="termCard">
+        <mat-tab label="Term">
+          <mat-card class="termArea">
+            <div class="termWrapper">
+              {{dataSource[cardNum].Term}}
+            </div>
+          </mat-card>
+        </mat-tab>
+        <mat-tab label="Answer">
+          <mat-card class="termArea">
+            <div class="termWrapper">
+              {{dataSource[cardNum].Definition}}
+            </div>
+            <mat-button-toggle-group class="answerBox">
+              <mat-button-toggle value="0">Nope</mat-button-toggle>
+              <mat-button-toggle value="1">Kinda</mat-button-toggle>
+              <mat-button-toggle value="2">Yep</mat-button-toggle>
+            </mat-button-toggle-group>
+          </mat-card>
+        </mat-tab>
+      </mat-tab-group>
     </mat-grid-tile>
     <mat-grid-tile>
       <div [ngSwitch]="cardNum">
