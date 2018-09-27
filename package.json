@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --prod",
+    "start": "serve -s dist/FlashcardAng"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +26,7 @@
     "core-js": "^2.5.4",
     "ng-circle-progress": "^1.2.0",
     "rxjs": "~6.2.0",
+    "serve": "^10.0.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
