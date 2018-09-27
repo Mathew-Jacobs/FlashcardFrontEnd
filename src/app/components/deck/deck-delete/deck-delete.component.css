@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> 0dd8b087360fe4abcfde56effe4c8457e3cd9afc
 h1 {
     color: gray;
     font: bolder;
@@ -9,8 +12,27 @@ h1 {
 h4 {
     font: bold;
 }
+<<<<<<< HEAD
 
 .button {
     border-bottom-color: black
 }
 >>>>>>> Stashed changes
+=======
+.cancel {
+    color: #FFA357;
+    background-color: white;
+}
+.cancel:hover {
+    color: white;
+    background-color: #FFC89A;
+}
+.delete {
+    color: red;
+    background-color: white;
+}
+.delete:hover {
+    color: white;
+    background-color: rgb(255, 154, 154);
+}
+>>>>>>> 0dd8b087360fe4abcfde56effe4c8457e3cd9afc

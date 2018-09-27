@@ -1,36 +1,125 @@
-<h1>Details</h1>
+<mat-grid-list cols="4" rowHeight="4:1">
+  <mat-grid-tile class="headerTile" [colspan]="4">
+    Header
+  </mat-grid-tile>
+  <mat-grid-tile class="cardListNav">
+    <input placeholder="Search"/>
+    <button *ngIf="deck" mat-button routerLink="/cards/create/{{deck.DeckID}}">+</button>
+  </mat-grid-tile>
+  
 
-<hr>
-<div *ngIf="deck">
-  <div>
-    <label for="">DeckID:</label>
-    <span>{{deck.DeckID}}</span>
-  </div>
-  <div>
-    <label for="">Title:</label>
-    <span>{{deck.Title}}</span>
-  </div>
-  <div>
-    <label for="">Description:</label>
-    <span>{{deck.Description}}</span>
-  </div>
-  <div>
-    <label for="">Created:</label>
-    <span>{{deck.CreateTime | date: 'short'}}</span>
-  </div>
-  <div>
-    <label for="">Modified:</label>
-    <span>{{deck.ModifyTime | date: 'short'}}</span>
-  </div>
-  <div>
-    <label for="">LastReviewed:</label>
-    <span>{{deck.LastReviewed | date: 'short'}}</span>
-  </div>
-  <div>
-      <label for="">PercentComplete:</label>
-      <span>{{deck.PercentComplete}}</span>
+  <mat-grid-tile [colspan]="3" [rowspan]="6" class="deckContentTile">
+    <div *ngIf="deck">
+      <div class="graphDetailWrapper">
+        <circle-progress [percent]=deck.PercentComplete>
+        </circle-progress>
+      </div>
+      <div class="deckDetailWrapper">
+        <div>
+          <label for="">DeckID:</label>
+          <span>{{deck.DeckID}}</span>
+        </div>
+        <div>
+          <label for="">Title:</label>
+          <span>{{deck.Title}}</span>
+        </div>
+        <div>
+          <label for="">Description:</label>
+          <span>{{deck.Description}}</span>
+        </div>
+        <div>
+          <label for="">Created:</label>
+          <span>{{deck.CreateTime | date: 'short'}}</span>
+        </div>
+        <div>
+          <label for="">Modified:</label>
+          <span>{{deck.ModifyTime | date: 'short'}}</span>
+        </div>
+        <div>
+          <label for="">LastReviewed:</label>
+          <span>{{deck.LastReviewed | date: 'short'}}</span>
+        </div>
+        <div>
+          <label for="">PercentComplete:</label>
+          <span>{{deck.PercentComplete}}</span>
+        </div>
+        <button mat-button routerLink="/cards/create/{{deck.DeckID}}">Add Flashcard</button>
+        <button mat-button color="accent" routerLink="/decks/edit/{{deck.DeckID}}">Edit</button>|
+        <button mat-button color="primary" routerLink="/decks">Back to List</button>
+      </div>
     </div>
-</div>
+  </mat-grid-tile>
 
-<button mat-button color="accent" routerLink="/decks/edit/{{deck.DeckID}}">Edit</button>|
-<button mat-button color="primary" routerLink="/decks">Back to List</button>
+  <mat-grid-tile [rowspan]="5" class="cardListTile">
+      <div *ngIf="cardList">
+        <ul class="cardListContent">
+          <li *ngFor="let card of cardList" >
+            <div>
+              <span>
+                {{card.Term}}
+              </span>
+              <button *ngIf="deck" mat-button routerLink="/cards/detail/{{card.CardID}}/{{deck.DeckID}}">Details</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<!-- <div class="detailWrapper">
+  <div class="detailHeader">
+
+  </div>
+  <div class="cardListWrapper">
+    <div *ngIf="cardList">
+      <ul *ngFor="let card of cardList">
+        <li>
+          <div>
+            {{card.Term}}
+          </div>
+          <button mat-button routerLink="/cards/detail/{{card.CardID}}/{{deck.DeckID}}">Details</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="deckDetailWrapper">
+    <div *ngIf="deck">
+      <div class="graphDetailWrapper">
+        <circle-progress [percent]=deck.PercentComplete>
+        </circle-progress>
+      </div>
+      <div>
+        <label for="">DeckID:</label>
+        <span>{{deck.DeckID}}</span>
+      </div>
+      <div>
+        <label for="">Title:</label>
+        <span>{{deck.Title}}</span>
+      </div>
+      <div>
+        <label for="">Description:</label>
+        <span>{{deck.Description}}</span>
+      </div>
+      <div>
+        <label for="">Created:</label>
+        <span>{{deck.CreateTime | date: 'short'}}</span>
+      </div>
+      <div>
+        <label for="">Modified:</label>
+        <span>{{deck.ModifyTime | date: 'short'}}</span>
+      </div>
+      <div>
+        <label for="">LastReviewed:</label>
+        <span>{{deck.LastReviewed | date: 'short'}}</span>
+      </div>
+      <div>
+        <label for="">PercentComplete:</label>
+        <span>{{deck.PercentComplete}}</span>
+      </div>
+      <button mat-button routerLink="/cards/create/{{deck.DeckID}}">Add Flashcard</button>
+      <button mat-button color="accent" routerLink="/decks/edit/{{deck.DeckID}}">Edit</button>|
+      <button mat-button color="primary" routerLink="/decks">Back to List</button>
+    </div>
+  </div>
+</div> -->

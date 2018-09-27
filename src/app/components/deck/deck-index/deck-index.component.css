@@ -17,7 +17,6 @@
     position: absolute;
     text-align: left;
     font-size: 2em;
-    padding: 5px 10px;
     top: 0;
     right: 0;
     left: 0;
@@ -33,6 +32,14 @@
     bottom: 10%;
 }
 
+.graphWrapper {
+    position: absolute;
+    right: 40%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
 .graphPercent {
     background-color: black;
     border-radius: 50%;
@@ -43,5 +50,27 @@
 }
 
 .menuButton {
-    float: right;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid #FF7400;
+    color: #FF7400;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: ease-in-out 0.15s;
+    right: 2%;
+}
+
+.menuButton:hover {
+    background-color: #FF7400;
+
+    color: white;
+}
+
+.deckTitle {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
 }

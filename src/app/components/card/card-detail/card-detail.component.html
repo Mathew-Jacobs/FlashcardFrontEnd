@@ -1,0 +1,51 @@
+<div class="card-details">
+<h1>Details</h1>
+
+
+<div *ngIf="card">
+  <!-- <div>
+    <label for=""><b>CardID: </b></label>
+    <span>{{card.CardID}}</span>
+  </div> -->
+  <div>
+    <label for=""><b>Term:     </b></label>
+    <span>{{card.Term}}</span>
+  </div>
+  <br>
+  <div>
+    <label for=""><b>Definition:     </b></label>
+    <span>{{card.Definition}}</span>
+  </div>
+  <br>
+  <div>
+    <label for=""><b>Deck Index:     </b></label>
+    <span>{{card.DeckIndex}}</span>
+  </div>
+  <br>
+  <div>
+    <label for=""><b>Created:     </b></label>
+    <span>{{card.CreateTime}}</span>
+  </div>
+  <br>
+  <div>
+    <label for=""><b>Modified:     </b></label>
+    <span>{{card.ModifyTime}}</span>
+  </div>
+  <br>
+  <div>
+    <label for=""><b>Last Reviewed:     </b></label>
+    <span>{{card.LastReviewed}}</span>
+  </div>
+  <br>
+  <div>
+    <label for=""><b>Number of Times Reviewed:     </b></label>
+    <span>{{card.NumberTimesReviewed}}</span>
+  </div>
+</div>
+<br>
+
+<div *ngIf="card">
+  <button mat-button color="accent" routerLink="/cards/edit/{{card.CardID}}/{{card.DeckIndex}}">Edit</button>
+  <button mat-button color="primary" routerLink="/decks/detail/{{card.DeckIndex}}">Back to Deck</button>
+</div>
+</div>

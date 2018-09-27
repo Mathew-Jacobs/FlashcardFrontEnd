@@ -7,24 +7,31 @@
   <mat-grid-tile *ngFor="let deck of dataSource" class="deckTile">
     <mat-card class="deckCard">
       <div class="deckHeader">
-        {{deck.Title}}
+        <p class="deckTitle">
+          {{deck.Title}}
+        </p>
         <button mat-icon-button [matMenuTriggerFor]="menu" class="menuButton">
-          <mat-icon>more_vert</mat-icon>
+          <mat-icon>more_horiz</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/decks/detail/{{deck.DeckID}}">
+              <mat-icon>info_outline</mat-icon>
+              <span>Details</span>
+            </button>
           <button mat-menu-item routerLink="/decks/edit/{{deck.DeckID}}">
             <mat-icon>edit</mat-icon>
             <span>Edit</span>
           </button>
-          <button mat-menu-item routerLink="/decks/delete/{{deck.DeckID}}">
-            <mat-icon>delete</mat-icon>
+          <button mat-menu-item (click)="openDialog(deck.DeckID)">
+            <mat-icon>delete_outline</mat-icon>
             <span>Delete</span>
           </button>
         </mat-menu>
       </div>
       <div class="contentBox">
-        <div class="graphPercent">
-          {{deck.PercentComplete}}
+        <div class="graphWrapper">
+          <circle-progress [percent]=deck.PercentComplete>
+          </circle-progress>
         </div>
       </div>
     </mat-card>

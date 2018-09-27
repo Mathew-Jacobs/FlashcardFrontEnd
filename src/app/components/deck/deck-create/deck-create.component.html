@@ -1,20 +1,26 @@
-<h1>Create a Deck</h1>
-<hr>
+<div class="create">
 
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="deckForm">
-  <div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="Title" formControlName="Title" required minlength="1"/>
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="Description" formControlName="Description" type="Description" required minlength="1"/>
-      </mat-form-field>
-    </div>
+  <h1 class="title">Create Deck</h1>
+  
+  <div class="fill-out">
+    <form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="deckForm">
+      <div>
+        <div>
+          <mat-form-field class="line">
+            <input matInput placeholder="Title" formControlName="Title" required minlength="1" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="line">
+            <input matInput placeholder="Description" formControlName="Description" type="Description" required
+              minlength="1" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="button">
+        <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Deck</button>
+      </div>
+    </form>
+    <a class="back" mat-button routerLink="/decks">Back to List</a>
   </div>
-  <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Deck</button>
-</form>
-
-<a mat-button routerLink="/notes">Back to List</a>
+</div>
