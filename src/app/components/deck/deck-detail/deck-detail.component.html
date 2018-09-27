@@ -1,10 +1,12 @@
 <mat-grid-list cols="4" rowHeight="4:1">
   <mat-grid-tile class="headerTile" [colspan]="4">
-    Header
+    <h1>{{deck.Title}}</h1>
   </mat-grid-tile>
   <mat-grid-tile class="cardListNav">
     <input placeholder="Search"/>
-    <button *ngIf="deck" mat-button routerLink="/cards/create/{{deck.DeckID}}">+</button>
+    <button *ngIf="deck" mat-button routerLink="/cards/create/{{deck.DeckID}}">
+    <mat-icon>add</mat-icon>
+  </button>
   </mat-grid-tile>
   
 
@@ -36,11 +38,11 @@
           <span>{{deck.ModifyTime | date: 'short'}}</span>
         </div>
         <div>
-          <label for="">LastReviewed:</label>
+          <label for="">Last Reviewed:</label>
           <span>{{deck.LastReviewed | date: 'short'}}</span>
         </div>
         <div>
-          <label for="">PercentComplete:</label>
+          <label for="">Percent Complete:</label>
           <span>{{deck.PercentComplete}}</span>
         </div>
         <button mat-button routerLink="/cards/create/{{deck.DeckID}}">Add Flashcard</button>
@@ -58,7 +60,15 @@
               <span>
                 {{card.Term}}
               </span>
-              <button *ngIf="deck" mat-button routerLink="/cards/detail/{{card.CardID}}/{{deck.DeckID}}">Details</button>
+              <button *ngIf="deck" id="details" mat-button routerLink="/cards/detail/{{card.CardID}}/{{deck.DeckID}}">
+              <mat-icon>info_outline</mat-icon>
+            </button>
+            <button *ngIf="deck" id="edit" mat-button routerLink="/cards/edit/{{card.CardID}}/{{deck.DeckID}}">
+              <mat-icon>create</mat-icon>              
+            </button>
+            <button *ngIf="deck" id="delete" mat-button routerLink="/cards/delete/{{card.CardID}}/{{deck.DeckID}}">
+              <mat-icon>delete_outline</mat-icon>              
+            </button>
             </div>
           </li>
         </ul>
