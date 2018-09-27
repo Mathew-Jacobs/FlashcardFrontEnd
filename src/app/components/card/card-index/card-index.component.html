@@ -1,18 +1,39 @@
-<h1>Review</h1>
 <div *ngIf="dataSource">
-  <div>
-    {{dataSource[cardNum].Term}}
-  </div>
-  <div [ngSwitch]="cardNum">
-    <div *ngSwitchCase="dataSource.length - 1">
-      <button (click)="prevCard()">Back</button>
-    </div>
-    <div *ngSwitchCase="0">
-      <button (click)="nextCard()">Next</button>
-    </div>
-    <div *ngSwitchDefault>
-      <button (click)="prevCard()">Back</button>
-      <button (click)="nextCard()">Next</button>
-    </div>
-  </div>
+  <mat-grid-list cols="9" rowHeight="10:35" class="cardReviewWrapper">
+    <mat-grid-tile>
+      <div [ngSwitch]="cardNum">
+        <div *ngSwitchCase="0">
+          <button mat-button disabled>
+            <mat-icon>navigate_before</mat-icon>
+          </button>
+        </div>
+        <div *ngSwitchDefault>
+          <button mat-button (click)="prevCard()">
+            <mat-icon>navigate_before</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile class="deckTile" [colspan]="7">
+      <mat-card class="termCard">
+        <div class="termWrapper">
+          {{dataSource[cardNum].Term}}
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div [ngSwitch]="cardNum">
+        <div *ngSwitchCase="dataSource.length - 1">
+          <button mat-button disabled>
+            <mat-icon>navigate_next</mat-icon>
+          </button>
+        </div>
+        <div *ngSwitchDefault>
+          <button mat-button (click)="nextCard()">
+            <mat-icon>navigate_next</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>

@@ -1,0 +1,19 @@
+.termCard {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 3px solid #FFC89A;
+    background-color: #FFF8F3; 
+}
+
+.cardReviewWrapper {
+    width: 80%;
+    margin: 8% auto;
+}
+
+.termWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+}
