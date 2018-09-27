@@ -35,14 +35,17 @@ export class CardEditComponent implements OnInit {
       CardID: new FormControl(this.card.CardID),
       DeckID: new FormControl(this.card.DeckID),   
       Term: new FormControl(this.card.Term),
-      Definition: new FormControl(this.card.Definition)
+      Definition: new FormControl(this.card.Definition),
+      LevelOfUnderstanding: new FormControl(this.card.LevelOfUnderstanding)
     });
   }
 
   onSubmit(form){
     const updateCard: Card = {
+      CardID: form.value.CardID,
       Term: form.value.Term,
-      Definition: form.value.Definition
+      Definition: form.value.Definition,
+      LevelOfUnderstanding: form.value.LevelOfUnderstanding
     };
     this._cardService.updateCard(updateCard).subscribe(c => {this._router.navigate(['/cards'])})
   }

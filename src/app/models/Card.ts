@@ -8,4 +8,5 @@ export interface Card {
     ModifyTime?: Date;
     LastReviewed?: Date;
     NumberTimesReviewed?: number;
+    LevelOfUnderstanding: number;
 }
