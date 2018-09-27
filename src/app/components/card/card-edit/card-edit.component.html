@@ -14,8 +14,15 @@
               <input matInput placeholder="DeckID" formControlName="DeckID" type="DeckID" required [value]="card.DeckIndex" />
             </mat-form-field>
           </div>
-          <div>
+          <div hidden>
+            <mat-form-field>
+              <input matInput placeholder="LevelOfUnderstanding" formControlName="LevelOfUnderstanding"
+               type="LevelOfUnderstanding" required [value]="card.LevelOfUnderstanding" />
+            </mat-form-field>
+          </div>
 
+
+          <div>
             <div class="line">
               <mat-form-field>
                 <input matInput placeholder="Term" formControlName="Term" type="Term" required [value]="card.Term" />

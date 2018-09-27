@@ -1,31 +1,18 @@
-<h1>Index</h1>
-<a mat-raised-button color="primary" routerLink="/cards/create">Create New</a>
-<hr>
-
-<div>
-  <mat-table #table [dataSource]="dataSource">
-    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
-
-    <ng-container matColumnDef="CardID">
-        <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-        <mat-cell *matCellDef="let card" routerLink="/cards/detail/{{card.CardID}}/{{card.DeckIndex}}">{{card.CardID}}<i class="material-icons">library_books</i></mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="NumberTimesReviewed">
-      <mat-header-cell *matHeaderCellDef></mat-header-cell>
-      <mat-cell *matCellDef="let card"> {{card.NumberTimesReviewed}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="Term">
-      <mat-header-cell *matHeaderCellDef></mat-header-cell>
-      <mat-cell *matCellDef="let card">{{card.Term}}</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="Definition">
-        <mat-header-cell *matHeaderCellDef></mat-header-cell>
-        <mat-cell *matCellDef="let card">{{card.Definition}}</mat-cell>
-    </ng-container>
-
-  </mat-table>
+<h1>Review</h1>
+<div *ngIf="dataSource">
+  <div>
+    {{dataSource[cardNum].Term}}
+  </div>
+  <div [ngSwitch]="cardNum">
+    <div *ngSwitchCase="dataSource.length - 1">
+      <button (click)="prevCard()">Back</button>
+    </div>
+    <div *ngSwitchCase="0">
+      <button (click)="nextCard()">Next</button>
+    </div>
+    <div *ngSwitchDefault>
+      <button (click)="prevCard()">Back</button>
+      <button (click)="nextCard()">Next</button>
+    </div>
+  </div>
 </div>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CardsService } from '../../../services/cards.service';
 import { Card } from '../../../models/Card';
-import { MatTableDataSource} from '@angular/material'
+import { ActivatedRoute } from '../../../../../node_modules/@angular/router';
+
 @Component({
   selector: 'app-card-index',
   templateUrl: './card-index.component.html',
@@ -9,16 +10,27 @@ import { MatTableDataSource} from '@angular/material'
 })
 export class CardIndexComponent implements OnInit {
 
-  columnNames = ['CardID', 'Term', 'Definition', 'NumberTimesReviewed'];
-  dataSource: MatTableDataSource<Card>;
- 
-  constructor(private _cardService: CardsService) { }
+  dataSource: Card[];
+  cardNum: number;
+
+  constructor(private _cardService: CardsService, private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    // this._cardService.getCards().subscribe((cards: Card[]) =>{
-    //   this.dataSource =  new MatTableDataSource <Card>(cards);
-    //   console.log(cards)
-    // });
+    this._activatedRoute.paramMap.subscribe(routeData => {
+      this._cardService.getCards(routeData.get('did')).subscribe((cards: Card[]) => {
+        this.dataSource = cards;
+        console.log(cards)
+        this.cardNum = 0;
+      });
+    });
+  }
+
+  nextCard() {
+    this.cardNum += 1;
+  }
+
+  prevCard() {
+    this.cardNum -= 1;
   }
 
 }
