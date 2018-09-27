@@ -14,8 +14,8 @@
     padding-top: 1.5em;
     background-color: #FFF8F3;
     border-bottom: 1em solid #FFC89A;
-    border-left: 1px solid #FFC89A;
-    border-right: 1px solid #FFC89A;
+    border-left: 2px solid #FFC89A;
+    border-right: 2px solid #FFC89A;
 }
 .line {
     padding-top: .5em;
