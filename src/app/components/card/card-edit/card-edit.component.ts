@@ -43,10 +43,13 @@ export class CardEditComponent implements OnInit {
   onSubmit(form){
     const updateCard: Card = {
       CardID: form.value.CardID,
+      DeckID: form.value.DeckID,
       Term: form.value.Term,
       Definition: form.value.Definition,
       LevelOfUnderstanding: form.value.LevelOfUnderstanding
     };
-    this._cardService.updateCard(updateCard).subscribe(c => {this._router.navigate(['/cards'])})
+    this._ar.paramMap.subscribe(p => {
+      this._cardService.updateCard(updateCard).subscribe(c => {this._router.navigate([`/decks/detail/${p.get('did')}`])})
+    })
   }
 }

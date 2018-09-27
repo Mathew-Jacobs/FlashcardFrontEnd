@@ -22,7 +22,7 @@ h4 {
 }
 .delete {
     color: red;
-    background-color: white;
+    background-color: #fff3f3;
 }
 .delete:hover {
     color: white;
