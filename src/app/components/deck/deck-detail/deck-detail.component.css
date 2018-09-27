@@ -1,6 +1,7 @@
 .headerTile {
     background-color: #FFC89A;
     border: 2px solid #FFC89A;
+    font: bolder;
 }
 
 .cardListTile {
@@ -42,4 +43,8 @@
 .cardListNav {
     background-color: #FFC89A;
     border: 2px solid #FFC89A;
+}
+
+#delete {
+    
 }
