@@ -10,7 +10,7 @@
         <p class="deckTitle">
           {{deck.Title}}
         </p>
-        <button mat-icon-button [matMenuTriggerFor]="menu" class="menuButton">
+        <button [matMenuTriggerFor]="menu" class="menuButton">
           <mat-icon>more_horiz</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
@@ -32,6 +32,11 @@
         <div class="graphWrapper">
           <circle-progress [percent]=deck.PercentComplete>
           </circle-progress>
+        </div>
+        <div>
+          <button mat-button routerLink="/cards/{{deck.DeckID}}">
+            <mat-icon>play_arrow</mat-icon>
+          </button>
         </div>
       </div>
     </mat-card>
