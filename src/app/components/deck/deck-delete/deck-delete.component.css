@@ -7,3 +7,19 @@ h1 {
 h4 {
     font: bold;
 }
+.cancel {
+    color: #FFA357;
+    background-color: white;
+}
+.cancel:hover {
+    color: white;
+    background-color: #FFC89A;
+}
+.delete {
+    color: red;
+    background-color: white;
+}
+.delete:hover {
+    color: white;
+    background-color: rgb(255, 154, 154);
+}
