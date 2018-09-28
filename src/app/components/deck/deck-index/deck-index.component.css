@@ -12,6 +12,16 @@
     bottom: 0;
 }
 
+.createButton {
+    color: white;
+    background-color: #FFA357;
+}
+
+.createButton:hover {
+    color: #FFA357;
+    background-color: white;
+}
+
 .deckHeader {
     background-color: #FFC89A;
     position: absolute;
