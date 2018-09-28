@@ -7,7 +7,7 @@
 .cardListTile {
     overflow-y: auto;
     border: 2px solid #FFC89A;
-    border-bottom: 10px solid #FFC89A; 
+    border-bottom: 1.5em solid #FFC89A; 
 }
 
 .graphDetailWrapper {
@@ -37,7 +37,7 @@
 .deckContentTile {
     background-color: #FFF8F3;
     border: 2px solid #FFC89A;
-    border-bottom: 10px solid #FFC89A; 
+    border-bottom: 1.5em solid #FFC89A; 
 }
 
 .cardListNav {
@@ -45,6 +45,33 @@
     border: 2px solid #FFC89A;
 }
 
+.nav-btn {
+    color: white;
+    background-color: rgb(92, 196, 92);
+    border: 2px solid white;
+    position: absolute;
+    top: 70%;
+    bottom: 20%;
+    left: 75%;
+    right: 15%;    
+}
+
+.icon {
+    color: black;
+    width: 1em;    
+}
 #delete {
-    
+    position: absolute;
+    padding-right: -10em;
+}
+#delete:hover {
+    color: red;
+}
+
+#details:hover {
+    color: #ffa357;
+}
+
+#edit:hover {
+    color: rgb(92, 196, 92);
 }
