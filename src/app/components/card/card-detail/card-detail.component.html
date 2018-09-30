@@ -18,23 +18,23 @@
   </div>
   <br>
   <div>
-    <label for=""><b>Deck Index:     </b></label>
+    <label for=""><b>Deck ID:     </b></label>
     <span>{{card.DeckIndex}}</span>
   </div>
   <br>
   <div>
     <label for=""><b>Created:     </b></label>
-    <span>{{card.CreateTime}}</span>
+    <span>{{card.CreateTime | date: 'short'}}</span>
   </div>
   <br>
   <div>
     <label for=""><b>Modified:     </b></label>
-    <span>{{card.ModifyTime}}</span>
+    <span>{{card.ModifyTime | date: 'short'}}</span>
   </div>
   <br>
   <div>
     <label for=""><b>Last Reviewed:     </b></label>
-    <span>{{card.LastReviewed}}</span>
+    <span>{{card.LastReviewed | date: 'short'}}</span>
   </div>
   <br>
   <div>
@@ -45,7 +45,7 @@
 <br>
 
 <div *ngIf="card">
-  <button mat-button color="accent" routerLink="/cards/edit/{{card.CardID}}/{{card.DeckIndex}}">Edit</button>
-  <button mat-button color="primary" routerLink="/decks/detail/{{card.DeckIndex}}">Back to Deck</button>
+  <button mat-button class="edit" routerLink="/cards/edit/{{card.CardID}}/{{card.DeckIndex}}">Edit</button>
+  <button mat-button class="back" routerLink="/decks/detail/{{card.DeckIndex}}">Back to Deck</button>
 </div>
 </div>

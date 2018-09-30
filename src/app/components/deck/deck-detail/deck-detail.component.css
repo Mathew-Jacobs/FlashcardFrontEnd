@@ -7,7 +7,8 @@
 .cardListTile {
     overflow-y: auto;
     border: 2px solid #FFC89A;
-    border-bottom: 1.5em solid #FFC89A; 
+    border-bottom: 1.5em solid #FFC89A;
+    background-color: #FFF8F3; 
 }
 
 .graphDetailWrapper {
@@ -22,7 +23,6 @@
     position: absolute;
     top: 0;
     left: 0;
-
 }
 
 .deckDetailWrapper {
@@ -54,6 +54,18 @@
     bottom: 20%;
     left: 75%;
     right: 15%;    
+}
+
+.addFlashcard:hover {
+    color: #ffa357;
+}
+
+.editDeck:hover {
+    color: rgb(92, 196, 92);
+}
+
+.backToDecks:hover {
+    color: #ffa357;
 }
 
 .icon {

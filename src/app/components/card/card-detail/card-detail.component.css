@@ -15,3 +15,11 @@ h1 {
     padding-bottom: 15px;
     background-color: #FFC89A;
 }
+
+.edit:hover {
+    color: rgb(92, 196, 92);
+}
+
+.back:hover {
+    color: #FFA357;
+}
