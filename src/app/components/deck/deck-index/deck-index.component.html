@@ -1,7 +1,14 @@
 <mat-grid-list cols="3" gutterSize="2em" rowHeight="4:3">
   <mat-grid-tile class="deckTile">
     <mat-card class="deckCard">
-      <a mat-raised-button class="createButton" routerLink="/decks/create">Create New</a>
+      <div class="deckHeader">
+      <p class="deckTitle">Create New Deck</p>
+      </div>
+      <div class="contentBox">
+        <div class="">
+      <a mat-button class="createButton" routerLink="/decks/create"><mat-icon class="add">add</mat-icon></a>
+      </div>
+      </div>
     </mat-card>
   </mat-grid-tile>
   <mat-grid-tile *ngFor="let deck of dataSource" class="deckTile">
@@ -35,8 +42,11 @@
         </div>
         <div>
           <button mat-button routerLink="/cards/{{deck.DeckID}}">
-            <mat-icon>play_arrow</mat-icon>
+            <mat-icon class="play">play_arrow</mat-icon>
           </button>
+        </div>
+        <div>
+          <button class="cardAdd" mat-button routerLink="/cards/create/{{deck.DeckID}}">Add New Card</button>
         </div>
       </div>
     </mat-card>
