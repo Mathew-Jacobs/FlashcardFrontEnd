@@ -13,14 +13,22 @@
 }
 
 .createButton {
-    color: white;
-    background-color: #FFA357;
+    color: black;
+    background-color: #fff8f3;
+    
 }
-
 .createButton:hover {
     color: #FFA357;
-    background-color: white;
 }
+
+ .add {
+     font-size: 72px;
+     position: absolute;
+     top: 1;
+     bottom: 3;
+     left: 0;
+     right: 1;     
+ }
 
 .deckHeader {
     background-color: #FFC89A;
@@ -72,7 +80,6 @@
 
 .menuButton:hover {
     background-color: #FF7400;
-
     color: white;
 }
 
@@ -82,4 +89,22 @@
     top: 50%;
     transform: translateY(-50%);
     left: 5%;
+}
+.play {
+    color: black;
+    font-size: 72px;
+    position: absolute;
+    top: 50%;
+    right: -70%;
+}
+.play:hover {
+    color: rgb(92, 196, 92);
+}
+.cardAdd {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
+.cardAdd:hover {
+    color: #FFA357;
 }
