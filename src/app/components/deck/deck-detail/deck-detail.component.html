@@ -5,7 +5,7 @@
   <mat-grid-tile class="cardListNav">
     <input placeholder="Search"/>
     <button *ngIf="deck" mat-button routerLink="/cards/create/{{deck.DeckID}}">
-    <mat-icon>add</mat-icon>
+    <mat-icon>add</mat-icon>Add Card
   </button>
   </mat-grid-tile>
   
@@ -45,12 +45,12 @@
           <label for="">Percent Complete:</label>
           <span>{{deck.PercentComplete}}</span>
         </div>
-        <button mat-button routerLink="/cards/create/{{deck.DeckID}}">Add Flashcard</button>
-        <button mat-button color="accent" routerLink="/decks/edit/{{deck.DeckID}}">Edit</button>|
-        <button mat-button color="primary" routerLink="/decks">Back to List</button>
+        <button mat-button class="addFlashcard" routerLink="/cards/create/{{deck.DeckID}}">Add Flashcard</button>|
+        <button mat-button class="editDeck" routerLink="/decks/edit/{{deck.DeckID}}">Edit</button>|
+        <button mat-button class="backToDecks" routerLink="/decks">Back to List</button>
       </div>
       <div>
-        <button mat-raised-button class="nav-btn" type="submit">Review</button>
+        <button mat-raised-button class="nav-btn" routerLink="/cards/{{deck.DeckID}}">Review</button>
       </div>
     </div>
   </mat-grid-tile>
