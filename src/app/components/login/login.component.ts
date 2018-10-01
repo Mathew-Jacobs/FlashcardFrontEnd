@@ -10,19 +10,22 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   }
 }
 
-
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
+    
   ]);
+passwordFormControl = new FormControl('', [
+  Validators.required,
+]);
+
+
   matcher = new MyErrorStateMatcher();
   public loginForm: FormGroup;
   public registerForm: FormGroup;

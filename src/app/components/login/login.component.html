@@ -20,8 +20,10 @@
             </mat-form-field>
           </div>
           <div class="password">
-            <mat-form-field>
-              <input matInput placeholder="Password" formControlName="password" type="password" required/>
+            <mat-form-field class="Password">
+              <input matInput placeholder="Password" [formControl]="passwordFormControl" [errorStateMatcher]="matcher"/>
+              <mat-error *ngIf= "passwordFormControl.hasError( 'password' ) && !passwordFormControl.hasError( 'required')">Password must be at least 6 characters, contain a capital letter, and contain a special character</mat-error>
+              <mat-error *ngIf= "passwordFormControl.hasError( 'required' )">Password is <strong>required</strong></mat-error>
             </mat-form-field>
           </div>
         </div>
