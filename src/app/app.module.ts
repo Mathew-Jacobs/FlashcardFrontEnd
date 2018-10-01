@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
+
 import {
    MatToolbarModule,
    MatFormFieldModule,
@@ -17,7 +18,8 @@ import {
    MatMenuModule,
    MatIconModule,
    MatDialogModule,
-   MatButtonToggleModule
+   MatButtonToggleModule,
+   
  } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
