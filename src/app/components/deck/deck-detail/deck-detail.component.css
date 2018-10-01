@@ -55,6 +55,16 @@
     left: 75%;
     right: 15%;    
 }
+.nav-btn:hover {
+    color: rgb(92, 196, 92);
+    background-color: white;
+    border: 2px solid rgb(92, 196, 92);
+}
+.addNav:hover {
+    color: #ffa357;
+    background-color: white;
+    border: 2px solid #ffc89a;
+}
 
 .addFlashcard:hover {
     color: #ffa357;
