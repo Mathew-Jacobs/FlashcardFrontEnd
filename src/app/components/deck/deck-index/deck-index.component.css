@@ -94,17 +94,20 @@
     color: black;
     font-size: 72px;
     position: absolute;
-    top: 50%;
-    right: -70%;
+    top: 60%;
+    right: -60%;
 }
 .play:hover {
     color: rgb(92, 196, 92);
 }
 .cardAdd {
+    color: white;
     position: absolute;
     bottom: 10%;
     right: 10%;
+    background-color: #FFC89A;
 }
 .cardAdd:hover {
     color: #FFA357;
+    background-color: white;
 }

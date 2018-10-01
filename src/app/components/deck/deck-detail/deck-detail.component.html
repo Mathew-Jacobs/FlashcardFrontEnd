@@ -2,13 +2,6 @@
   <mat-grid-tile class="headerTile" [colspan]="4">
     <h1 *ngIf="deck">{{deck.Title}}</h1>
   </mat-grid-tile>
-  <!-- <mat-grid-tile class="cardListNav">
-    <input placeholder="Search" />
-    <button *ngIf="deck" mat-button routerLink="/cards/create/{{deck.DeckID}}">
-      <mat-icon>add</mat-icon>Add Card
-    </button>
-  </mat-grid-tile> -->
-
   <mat-grid-tile [rowspan]="6" class="cardListTile">
     <div class="tableWrapper">
 
@@ -35,32 +28,6 @@
 
       </mat-table>
     </div>
-    <!-- <div *ngIf="cardList">
-      <ul class="cardListContent">
-        <li *ngFor="let card of cardList">
-          <div>
-            <span>
-              {{card.Term}}
-            </span>
-            <span class="icon">
-              <button *ngIf="deck" id="details" mat-button routerLink="/cards/detail/{{card.CardID}}/{{deck.DeckID}}">
-                <mat-icon>info_outline</mat-icon>
-              </button>
-            </span>
-            <span class="icon">
-              <button *ngIf="deck" id="edit" mat-button routerLink="/cards/edit/{{card.CardID}}/{{deck.DeckID}}">
-                <mat-icon>create</mat-icon>
-              </button>
-            </span>
-            <span class="icon">
-              <button *ngIf="deck" id="delete" mat-button routerLink="/cards/delete/{{card.CardID}}">
-                <mat-icon>delete_outline</mat-icon>
-              </button>
-            </span>
-          </div>
-        </li>
-      </ul>
-    </div> -->
   </mat-grid-tile>
 
   <mat-grid-tile [colspan]="3" [rowspan]="6" class="deckContentTile">
