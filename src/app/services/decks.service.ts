@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Deck } from '../models/Deck'
 
-const ApiUrl = 'http://flashcardapi.azurewebsites.net/'
+const ApiUrl = 'https://flashcardapi.azurewebsites.net/'
 
 
 @Injectable()

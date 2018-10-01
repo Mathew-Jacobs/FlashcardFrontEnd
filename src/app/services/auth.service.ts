@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs';
 
-const Api_Url = 'http://flashcardapi.azurewebsites.net/';
+const Api_Url = 'https://flashcardapi.azurewebsites.net/';
 
 
 @Injectable()
