@@ -29,9 +29,9 @@
               {{dataSource[cardNum].Definition}}
             </div>
             <mat-button-toggle-group class="answerBox">
-              <mat-button-toggle value="0">Nope</mat-button-toggle>
-              <mat-button-toggle value="1">Kinda</mat-button-toggle>
-              <mat-button-toggle value="2">Yep</mat-button-toggle>
+              <button (click)="submitUnderstanding(0,dataSource[cardNum])">Nope</button>
+              <button (click)="submitUnderstanding(1,dataSource[cardNum])">Kinda</button>
+              <button (click)="submitUnderstanding(2,dataSource[cardNum])">Yep</button>
             </mat-button-toggle-group>
           </mat-card>
         </mat-tab>

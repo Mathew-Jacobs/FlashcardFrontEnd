@@ -33,4 +33,6 @@ export class CardsService {
   deleteCard(id: number){
     return this._http.delete(`${Api_Url}api/Flashcard/${id}`, { headers: this.getHeaders()});
   }
+
+  
 }
