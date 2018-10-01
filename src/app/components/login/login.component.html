@@ -1,37 +1,42 @@
 <mat-tab-group>
   <mat-tab label="login">
-    
+
     <div class="login">
-    <div class="log-reg-label">
-      <h1>Welcome to Flash Focus!</h1>
-      <h4>Please login to continue.</h4>
-    </div>
-
-
-    <form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="loginForm"> 
-      <div>
-        <div class="email">
-          <mat-form-field>
-            <input matInput placeholder="Email" formControlName="email" type="email" required/>
-          </mat-form-field>
-        </div>
-        <div class="password">
-          <mat-form-field>
-            <input matInput placeholder="Password" formControlName="password" type="password" required/>
-          </mat-form-field>
-        </div>
+      <div class="log-reg-label">
+        <h1>Welcome to Flash Focus!</h1>
+        <h4>Please login to continue.</h4>
       </div>
-      <button mat-raised-button class="nav-btn" color="primary" type="submit">Login</button>
-    </form> 
-  </div>
+
+
+      <form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+        <div>
+          <div class="email">
+            <mat-form-field class="Email">
+              <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+              <mat-error *ngIf="emailFormControl.hasError( 'email' ) && !emailFormControl.hasError( 'required')">Please enter a valid email address</mat-error>
+              <mat-error *ngIf="emailFormControl.hasError( 'required' )">Email is
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="password">
+            <mat-form-field>
+              <input matInput placeholder="Password" formControlName="password" type="password" required/>
+            </mat-form-field>
+          </div>
+        </div>
+        <button mat-raised-button class="nav-btn" color="primary" type="submit">Login</button>
+      </form>
+    </div>
     <br>
   </mat-tab>
   <mat-tab label="register">
     <div class="login">
-    <div class="log-reg-label">
-      <h1>Register</h1>
-      <h4>Create a new account.</h4></div>
-      
+      <div class="log-reg-label">
+        <h1>Register</h1>
+        <h4>Create a new account.</h4>
+      </div>
+
       <form (ngSubmit)="onSubmitReg()" [formGroup]="registerForm">
         <div>
           <div class="email">
@@ -52,6 +57,6 @@
         </div>
         <button mat-raised-button class="nav-btn" color="primary" type="submit">Register</button>
       </form>
-    </div> 
+    </div>
   </mat-tab>
 </mat-tab-group>
