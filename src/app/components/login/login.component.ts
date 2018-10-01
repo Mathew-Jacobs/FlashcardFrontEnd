@@ -1,14 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import {FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted))
+  }
+}
+
+
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-
+export class LoginComponent {
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+  matcher = new MyErrorStateMatcher();
   public loginForm: FormGroup;
   public registerForm: FormGroup;
 
@@ -27,7 +42,7 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  createFormReg(){
+  createFormReg() {
     this.registerForm = this._form.group({
       email: new FormControl,
       password: new FormControl,
@@ -43,7 +58,7 @@ export class LoginComponent implements OnInit {
     console.log(this.registerForm.value);
     this.authService
       .register(this.registerForm.value)
-      .subscribe(( () => this. authService.login(this.registerForm.value)) );
+      .subscribe((() => this.authService.login(this.registerForm.value)));
   }
 
 }
