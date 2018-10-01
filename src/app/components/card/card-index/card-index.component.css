@@ -29,3 +29,20 @@
     height: 100%;
     padding: 0;
 }
+.exit {
+    color: red;
+    background-color: #fff3f3;
+    margin-left: 2em;
+}
+.exit:hover {
+    color: white;
+    background-color: rgb(255, 154, 154);
+}
+.rpt {
+    color: rgb(92, 196, 92);
+    background-color: #ebf8eb;
+}
+.rpt:hover {
+    color: white;
+    background-color: #8dd68d;
+}
