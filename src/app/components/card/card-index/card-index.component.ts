@@ -33,4 +33,13 @@ export class CardIndexComponent implements OnInit {
     this.cardNum -= 1;
   }
 
+  submitUnderstanding(num: number,card: Card){
+    const updateACard: Card = {
+      CardID: card.CardID,
+      LevelOfUnderstanding: num,
+      Term: card.Term,
+      Definition: card.Definition,
+    };
+    this._cardService.updateCard(updateACard).subscribe();
+  }
 }
