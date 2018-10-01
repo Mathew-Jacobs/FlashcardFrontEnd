@@ -1,3 +1,21 @@
+.mat-table {
+    width: 100%;
+    background-color: #FFF8F3;
+}
+
+.mat-header-row {
+    display: none;
+}
+
+.tableWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FFF8F3; 
+}
+
 .headerTile {
     background-color: #FFC89A;
     border: 2px solid #FFC89A;
@@ -23,6 +41,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .deckDetailWrapper {
