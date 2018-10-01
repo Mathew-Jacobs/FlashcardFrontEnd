@@ -29,6 +29,10 @@ export class CardIndexComponent implements OnInit {
     this.cardNum += 1;
   }
 
+  backToBeginning() {
+    this.cardNum = 0;
+  }
+
   prevCard() {
     this.cardNum -= 1;
   }
