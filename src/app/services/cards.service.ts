@@ -3,9 +3,6 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Card } from '../models/Card';
 import { Api_Url } from '../../environments/environment.prod';
 
-//const ApiUrl = 'https://flashcardapi.azurewebsites.net/'
-
-
 @Injectable({
   providedIn: 'root'
 })
