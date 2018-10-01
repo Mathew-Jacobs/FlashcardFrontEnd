@@ -5,9 +5,7 @@ import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs';
-
-const Api_Url = 'https://flashcardapi.azurewebsites.net/';
-
+import { Api_Url } from '../../environments/environment.prod';
 
 @Injectable()
 export class AuthService {
