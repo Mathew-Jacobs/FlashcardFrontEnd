@@ -4,7 +4,7 @@
   </mat-grid-tile>
   <mat-grid-tile class="cardListNav">
     <input placeholder="Search"/>
-    <button *ngIf="deck" mat-button routerLink="/cards/create/{{deck.DeckID}}">
+    <button class="addNav" *ngIf="deck" mat-button routerLink="/cards/create/{{deck.DeckID}}">
     <mat-icon>add</mat-icon>Add Card
   </button>
   </mat-grid-tile>
