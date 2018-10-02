@@ -63,6 +63,7 @@ const routes = [
       { path: 'delete/:id', component: CardDeleteComponent }
     ]
   },
+  { path: '**', component: LoginComponent },
 ]
   ;
 

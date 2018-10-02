@@ -1,3 +1,21 @@
+.mat-table {
+    width: 100%;
+    background-color: #FFF8F3;
+}
+
+.mat-header-row {
+    display: none;
+}
+
+.tableWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FFF8F3; 
+}
+
 .headerTile {
     background-color: #FFC89A;
     border: 2px solid #FFC89A;
@@ -23,6 +41,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .deckDetailWrapper {
@@ -46,9 +66,9 @@
 }
 
 .nav-btn {
-    color: white;
-    background-color: rgb(92, 196, 92);
-    border: 2px solid white;
+    color: rgb(92, 196, 92);
+    background-color: white;
+    border: 2px solid rgb(92, 196, 92);
     position: absolute;
     top: 70%;
     bottom: 20%;
@@ -56,8 +76,8 @@
     right: 15%;    
 }
 .nav-btn:hover {
-    color: rgb(92, 196, 92);
-    background-color: white;
+    color: white;
+    background-color: rgb(92, 196, 92);
     border: 2px solid rgb(92, 196, 92);
 }
 .addNav:hover {
