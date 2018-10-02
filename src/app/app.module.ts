@@ -112,7 +112,7 @@ const routes = [
       "subtitleFontSize": "20",
       "animationDuration": 1000,
       "showSubtitle": false,
-      "renderOnClick": true,
+      "renderOnClick": false,
       "responsive": true
     }),
     MatButtonToggleModule
