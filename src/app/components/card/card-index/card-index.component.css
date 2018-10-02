@@ -2,7 +2,7 @@
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     border: 3px solid #FFC89A;
-    background-color: #FFF8F3; 
+    background-color: #FF7400; 
 }
 
 .cardReviewWrapper {
@@ -73,6 +73,11 @@
     text-align: center;
 }
 
+.tp-box_front {
+    background: #FFF8F3;
+}
+
 .tp-box_back {
+    background: #FFF8F3;
     transform: rotateY(179.9deg)
 }

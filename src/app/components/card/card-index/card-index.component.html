@@ -8,9 +8,18 @@
           </button>
         </div>
         <div *ngSwitchDefault>
-          <button mat-button (click)="prevCard()">
-            <mat-icon>navigate_before</mat-icon>
-          </button>
+          <div [ngSwitch]="flip">
+            <div *ngSwitchCase="'active'">
+              <button mat-button disabled>
+                <mat-icon>navigate_before</mat-icon>
+              </button>
+            </div>
+            <div *ngSwitchDefault>
+              <button mat-button (click)="prevCard()">
+                <mat-icon>navigate_before</mat-icon>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </mat-grid-tile>
@@ -29,16 +38,16 @@
                   {{card.Definition}}
                 </div>
                 <mat-button-toggle-group class="answerBox">
-                  <button mat-button (click)="submitUnderstanding(0,card)">Nope</button>
-                  <button mat-button (click)="submitUnderstanding(1,card)">Kinda</button>
-                  <button mat-button (click)="submitUnderstanding(2,card)">Yep</button>
+                  <button mat-button (click)="submitUnderstanding(0,card); toggleFlip()">Nope</button>
+                  <button mat-button (click)="submitUnderstanding(1,card); toggleFlip()">Kinda</button>
+                  <button mat-button (click)="submitUnderstanding(2,card); toggleFlip()">Yep</button>
                 </mat-button-toggle-group>
               </mat-card>
             </div>
           </mat-tab>
         </div>
-        </mat-tab-group>
-      </mat-grid-tile>
+      </mat-tab-group>
+    </mat-grid-tile>
     <mat-grid-tile>
       <div [ngSwitch]="cardNum">
         <div *ngSwitchCase="dataSource.length - 1">
@@ -47,9 +56,18 @@
           </button>
         </div>
         <div *ngSwitchDefault>
-          <button mat-button (click)="nextCard()">
-            <mat-icon>navigate_next</mat-icon>
-          </button>
+          <div [ngSwitch]="flip">
+            <div *ngSwitchCase="'active'">
+              <button mat-button disabled>
+                <mat-icon>navigate_next</mat-icon>
+              </button>
+            </div>
+            <div *ngSwitchDefault>
+              <button mat-button (click)="nextCard()">
+                <mat-icon>navigate_next</mat-icon>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </mat-grid-tile>
