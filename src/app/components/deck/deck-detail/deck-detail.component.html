@@ -38,15 +38,6 @@
       </div>
       <div class="deckDetailWrapper">
         <div>
-          <label for="">DeckID:</label>
-          <span>{{deck.DeckID}}</span>
-        </div>
-        <div>
-          <label for="">Title:</label>
-          <span>{{deck.Title}}</span>
-        </div>
-        <div>
-          <label for="">Description:</label>
           <span>{{deck.Description}}</span>
         </div>
         <div>
@@ -61,10 +52,7 @@
           <label for="">Last Reviewed:</label>
           <span>{{deck.LastReviewed | date: 'short'}}</span>
         </div>
-        <div>
-          <label for="">Percent Complete:</label>
-          <span>{{deck.PercentComplete}}</span>
-        </div>
+
         <button mat-button class="addFlashcard" routerLink="/cards/create/{{deck.DeckID}}">Add Flashcard</button>|
         <button mat-button class="editDeck" routerLink="/decks/edit/{{deck.DeckID}}">Edit</button>|
         <button mat-button class="backToDecks" routerLink="/decks">Back to List</button>

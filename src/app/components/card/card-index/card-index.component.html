@@ -8,33 +8,44 @@
           </button>
         </div>
         <div *ngSwitchDefault>
-          <button mat-button (click)="prevCard()">
-            <mat-icon>navigate_before</mat-icon>
-          </button>
+          <div [ngSwitch]="flip">
+            <div *ngSwitchCase="'active'">
+              <button mat-button disabled>
+                <mat-icon>navigate_before</mat-icon>
+              </button>
+            </div>
+            <div *ngSwitchDefault>
+              <button mat-button (click)="prevCard()">
+                <mat-icon>navigate_before</mat-icon>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </mat-grid-tile>
     <mat-grid-tile class="deckTile" [colspan]="7">
-      <mat-tab-group class="termCard">
-        <mat-tab label="Term">
-          <mat-card class="termArea">
-            <div class="termWrapper">
-              {{dataSource[cardNum].Term}}
+      <mat-tab-group class="termCard" [selectedIndex]="cardNum">
+        <div class="tp-wrapper">
+          <mat-tab label="Term" *ngFor="let card of dataSource">
+            <div class="tp-box" (click)="toggleFlip()" [@flipState]="flip">
+              <mat-card class="termArea tp-box_side tp-box_front">
+                <div class="termWrapper">
+                  {{card.Term}}
+                </div>
+              </mat-card>
+              <mat-card class="termArea tp-box_side tp-box_back">
+                <div class="termWrapper">
+                  {{card.Definition}}
+                </div>
+                <mat-button-toggle-group class="answerBox">
+                  <button mat-button (click)="submitUnderstanding(0,card); toggleFlip()">Nope</button>
+                  <button mat-button (click)="submitUnderstanding(1,card); toggleFlip()">Kinda</button>
+                  <button mat-button (click)="submitUnderstanding(2,card); toggleFlip()">Yep</button>
+                </mat-button-toggle-group>
+              </mat-card>
             </div>
-          </mat-card>
-        </mat-tab>
-        <mat-tab label="Answer">
-          <mat-card class="termArea">
-            <div class="termWrapper">
-              {{dataSource[cardNum].Definition}}
-            </div>
-            <mat-button-toggle-group class="answerBox">
-              <button (click)="submitUnderstanding(0,dataSource[cardNum])">Nope</button>
-              <button (click)="submitUnderstanding(1,dataSource[cardNum])">Kinda</button>
-              <button (click)="submitUnderstanding(2,dataSource[cardNum])">Yep</button>
-            </mat-button-toggle-group>
-          </mat-card>
-        </mat-tab>
+          </mat-tab>
+        </div>
       </mat-tab-group>
     </mat-grid-tile>
     <mat-grid-tile>
@@ -45,9 +56,18 @@
           </button>
         </div>
         <div *ngSwitchDefault>
-          <button mat-button (click)="nextCard()">
-            <mat-icon>navigate_next</mat-icon>
-          </button>
+          <div [ngSwitch]="flip">
+            <div *ngSwitchCase="'active'">
+              <button mat-button disabled>
+                <mat-icon>navigate_next</mat-icon>
+              </button>
+            </div>
+            <div *ngSwitchDefault>
+              <button mat-button (click)="nextCard()">
+                <mat-icon>navigate_next</mat-icon>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </mat-grid-tile>
