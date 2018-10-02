@@ -63,6 +63,7 @@ const routes = [
       { path: 'delete/:id', component: CardDeleteComponent }
     ]
   },
+  { path: '**', component: LoginComponent },
 ]
   ;
 
@@ -111,7 +112,7 @@ const routes = [
       "subtitleFontSize": "20",
       "animationDuration": 1000,
       "showSubtitle": false,
-      "renderOnClick": false,
+      "renderOnClick": true,
       "responsive": true
     }),
     MatButtonToggleModule
