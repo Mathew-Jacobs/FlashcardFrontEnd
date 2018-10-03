@@ -102,10 +102,7 @@
     color: black;
     width: 1em;    
 }
-#delete {
-    position: absolute;
-    padding-right: -10em;
-}
+
 #delete:hover {
     color: red;
 }
