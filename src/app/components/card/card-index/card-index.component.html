@@ -38,9 +38,12 @@
                   {{card.Definition}}
                 </div>
                 <mat-button-toggle-group class="answerBox">
-                  <button mat-button (click)="submitUnderstanding(0,card);">Nope</button>
-                  <button mat-button (click)="submitUnderstanding(1,card);">Kinda</button>
-                  <button mat-button (click)="submitUnderstanding(2,card);">Yep</button>
+                  <div>
+                    How did you do?
+                  </div>
+                  <button mat-button class="wrg" (click)="submitUnderstanding(0,card);">Wrong</button>
+                  <button mat-button class="close" (click)="submitUnderstanding(1,card);">Close</button>
+                  <button mat-button class="correct" (click)="submitUnderstanding(2,card);">Correct</button>
                 </mat-button-toggle-group>
               </mat-card>
             </div>
