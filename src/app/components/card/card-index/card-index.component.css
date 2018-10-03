@@ -81,3 +81,30 @@
     background: #FFF8F3;
     transform: rotateY(179.9deg)
 }
+
+.wrg {
+    color: red;
+    background-color: #fff3f3;
+}
+.wrg:hover {
+    color: white;
+    background-color: rgb(255, 154, 154);
+}
+
+.close {
+    color: #FFDB67;
+    background-color: rgb(255, 245, 211);
+}
+.close:hover {
+    color: white;
+    background-color: #FFDB67;
+}
+
+.correct {
+    color: rgb(92, 196, 92);
+    background-color: #ebf8eb;
+}
+.correct:hover {
+    color: white;
+    background-color: #8dd68d;
+}
