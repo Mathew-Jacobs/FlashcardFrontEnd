@@ -19,6 +19,7 @@ import {
    MatIconModule,
    MatDialogModule,
    MatButtonToggleModule,
+   MatProgressSpinnerModule,
    
  } from '@angular/material';
 
@@ -115,7 +116,8 @@ const routes = [
       "renderOnClick": false,
       "responsive": true
     }),
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     AuthService,

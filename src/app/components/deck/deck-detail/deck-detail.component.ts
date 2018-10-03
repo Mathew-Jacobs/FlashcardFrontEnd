@@ -4,8 +4,9 @@ import { DecksService } from '../../../services/decks.service'
 import { Deck } from '../../../models/Deck'
 import { CardsService } from '../../../services/cards.service';
 import { Card } from '../../../models/Card';
-import { MatTableDataSource } from '../../../../../node_modules/@angular/material';
-import {animate, state, style, transition, trigger} from '@angular/animations';
+import { MatTableDataSource, MatDialog } from '../../../../../node_modules/@angular/material';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { CardDeleteComponent } from '../../card/card-delete/card-delete.component';
 
 
 @Component({
@@ -31,7 +32,7 @@ export class DeckDetailComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor(private _activatedRoute: ActivatedRoute, private _deckService: DecksService, private _cardService: CardsService) { }
+  constructor(private _activatedRoute: ActivatedRoute, private _deckService: DecksService, private _cardService: CardsService, private dialog: MatDialog) { }
 
   ngOnInit() {
     this._activatedRoute.paramMap.subscribe(routeData => {
@@ -42,6 +43,21 @@ export class DeckDetailComponent implements OnInit {
         this.cardList = cards;
         this.dataSource = new MatTableDataSource<Card>(cards);
       })
+    });
+  }
+
+  openDialog( id ) {
+    const dialogRef = this.dialog.open(CardDeleteComponent, {
+      data: {
+        id
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result == 1)
+      {
+        this.dataSource.data = this.dataSource.data.filter(h => h.CardID !== id)
+      }
     });
   }
 
