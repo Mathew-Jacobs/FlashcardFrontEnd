@@ -23,7 +23,9 @@
           <mat-cell *matCellDef="let card" style="display: flex; justify-content: flex-end">
             <i class="material-icons" id="details" routerLink="/cards/detail/{{card.CardID}}/{{deck.DeckID}}">info_outline</i>
             <i mat-icon class="material-icons" id="edit" routerLink="/cards/edit/{{card.CardID}}/{{card.DeckIndex}}">edit</i>
-            <i class="material-icons" id="delete">delete_outline</i>
+            <i class="material-icons" id="delete" (click)="openDialog(card.CardID)">
+              <mat-icon>delete_outline</mat-icon>
+            </i>
           </mat-cell>
         </ng-container>        
 
