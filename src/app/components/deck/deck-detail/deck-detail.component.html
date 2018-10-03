@@ -12,13 +12,18 @@
       <mat-table #table [dataSource]="dataSource">
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+        <ng-container matColumnDef="terms">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let card"> {{card.Term}} </mat-cell>
+        </ng-container>
         
         <ng-container matColumnDef="buttons">
           <mat-header-cell *matHeaderCellDef></mat-header-cell>
           <mat-cell *matCellDef="let card" style="display: flex; justify-content: flex-end">
-            <i class="material-icons">info_outline</i>
-            <i mat-icon class="material-icons">edit</i>
-            <i class="material-icons">delete_outline</i>
+            <i class="material-icons" id="details" routerLink="/cards/detail/{{card.CardID}}/{{deck.DeckID}}">info_outline</i>
+            <i mat-icon class="material-icons" id="edit" routerLink="/cards/edit/{{card.CardID}}/{{card.DeckIndex}}">edit</i>
+            <i class="material-icons" id="delete">delete_outline</i>
           </mat-cell>
         </ng-container>        
 
